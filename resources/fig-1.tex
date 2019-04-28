@@ -1,0 +1,22 @@
+% \documentclass{article}
+% \usepackage{tikz}
+% \usepackage{xcolor}
+% \definecolor{pathfill}{HTML}{a3be8c}
+\begin{tikzpicture}
+  \path[fill=pathfill, draw=pathfill, ultra thick]
+    (3.75,1.75) -- (3.5,-2) -- (-1.5,-3)  -- (-3,-0.5)  ;
+  \path[fill=pathfill,draw=black] 
+    (3.75,1.75) to [in=60, out=120] 
+    (-1.5,2.75) to[in=60, out=240] (-3,-0.5)
+    (-3,-0.5)  to[in=180, out=-135] (-1.5,-3)
+    (-1.5,-3) to[in=-120, out=15] (3.5,-2)
+    (3.5,-2) to[in=-45, out=60] (3.75,1.75);
+  \path[fill=white,draw=black]
+    (2,0) arc[radius=2, start angle=0, end angle=360] (0,0);
+  \draw[-latex']  (3.74,1.74) to[in=-45, out=60] (3.75,1.75);
+  \node at (0,0) {\textbullet};
+  \node[anchor=south west] at (0,0) {\(z_0\)};
+  \node[anchor=south east] at (2,0) {\(\beta\)};
+  \node[anchor=south west] at (3.75,1.75) {\(\gamma\)};
+\end{tikzpicture}
+% \end{document}
