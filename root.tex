@@ -3,10 +3,7 @@
 \input{parts/01-config.tex}
 \thispagestyle{empty}
 
-
 \begin{document}
-	%00
-	\input{parts/02-title-page.tex}
 	\input{parts/03-table-of-contents.tex}
 	\input{parts/04-foreword.tex}
 
@@ -17,4 +14,22 @@
 	\input{parts/2x-partial-fraction.tex}
 	\input{parts/2x-interpolation.tex}
 
+	\subsection{Khai triển Fourier \& Fourier ngược}
+	\begin{definition}[Khai triển fourier]
+		\textit{Khai triển fourier của hàm \(f\) được định nghĩa như sau:}
+		\begin{equation}
+			\mathfrak{F}[f](s)=\int_{-\infty}^\infty
+				f(t)\cdot e^{-ist}dt
+			\label{eq:fourier01}
+		\end{equation}
+	\end{definition}
+
+	\begin{definition}
+		[Khai triển Fourier ngược]
+		\textit{khai triển fourier ngược của hàm $\hat{f}(s)$ được định nghĩa:}
+		\begin{equation}
+			f(t) = \int_{-\infty}^\infty \hat{f}(s) e^{ist}ds
+			\label{eq:fourier02}
+		\end{equation}
+	\end{definition}
 \end{document}
