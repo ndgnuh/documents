@@ -1,5 +1,0 @@
-\babel@toc {vietnamese}{}
-\contentsline {section}{\numberline {1}Chu\IeC {\~\ocircumflex }i Laurent v\IeC {\`a} th\IeC {\d \abreve }ng d\IeC {\uhorn }}{2}% 
-\contentsline {section}{\numberline {2}M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } \IeC {\'\uhorn }ng d\IeC {\d u}ng c\IeC {\h u}a th\IeC {\d \abreve }ng d\IeC {\uhorn }}{3}% 
-\contentsline {subsection}{\numberline {2.1}Ph\IeC {\^a}n t\IeC {\'\i }ch l\IeC {\'\ohorn }p h\IeC {\`a}m h\IeC {\~\uhorn }u t\IeC {\h i}}{3}% 
-\contentsline {subsection}{\numberline {2.2}N\IeC {\d \ocircumflex }i suy \IeC {\dj }a th\IeC {\'\uhorn }c}{4}% 
