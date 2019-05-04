@@ -27,23 +27,22 @@
 		f(z) = \sum_{i=0}^n \frac{1}{z-z_i}\cdot \Res{f(z)}{z=z_i}
 	\end{equation}
 
-	\textbf{Ví dụ:}
-	Phân tích hàm \(f(z) = \frac{1}{z^2(z-i)}\). Các cực điểm của \(f(z)\) bao gồm:
-	\[
-		\begin{array}{cccc}
-			z &=& i & \text{(Cực điểm đơn giản)}\\
-			z &=& 0 & \text{(Cực điểm cấp 2)}\\
-		\end{array}
-	\]
-
-	Tính các thặng dư cần thiết:
-	\begin{align*}
-		\Res{f(z)}{z=i} &= \left.\frac{1}{[z^2(z-i)]'}\right\vert_{z=i} \\&= -1\\
-		\Res{f(z)}{z=0} &= \frac{1}{1!} \left.\frac{d}{dz}\left[f(z)\cdot z^2\right]\right\vert_{z=0}\\&= 1\\
-		\Res{f(z)(z-0)}{z=0} &= \left.\frac{1}{[z(z-i)]'}\right\vert_{z=0} \\&= i
-	\end{align*}
-
-	Sử dụng công thức (\ref{eq:parfrac03}) ta được:
-	\begin{align*}
-		f(z) = \frac{-1}{z-i} + \frac{1}{z} + \frac{i}{z^2}
-	\end{align*}
+	\begin{example}
+		Phân tích hàm \(f(z) = \frac{1}{z^2(z-i)}\). Các cực điểm của \(f(z)\) bao gồm:
+		\[
+			\begin{array}{cccc}
+				z &=& i & \text{(Cực điểm đơn giản)}\\
+				z &=& 0 & \text{(Cực điểm cấp 2)}\\
+			\end{array}
+		\] \par
+		Tính các thặng dư cần thiết:
+		\begin{align*}
+			\Res{f(z)}{z=i} &= \left.\frac{1}{[z^2(z-i)]'}\right\vert_{z=i} \\&= -1\\
+			\Res{f(z)}{z=0} &= \frac{1}{1!} \left.\frac{d}{dz}\left[f(z)\cdot z^2\right]\right\vert_{z=0}\\&= 1\\
+			\Res{f(z)(z-0)}{z=0} &= \left.\frac{1}{[z(z-i)]'}\right\vert_{z=0} \\&= i
+		\end{align*}
+		\par	Sử dụng công thức (\ref{eq:parfrac03}) ta được:
+		\begin{align*}
+			f(z) = \frac{-1}{z-i} + \frac{1}{z} + \frac{i}{z^2}
+		\end{align*}
+	\end{example}

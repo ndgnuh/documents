@@ -3,8 +3,9 @@
 \input{parts/01-config.tex}
 \thispagestyle{empty}
 
+
 \begin{document}
-	\textit{Mục đích của những lần commit mới hoàn toàn để thử Vim/Neovim, không mang tính quá trình...}
+	\input{parts/0x-cover.tex}
 	\input{parts/03-table-of-contents.tex}
 	\input{parts/04-foreword.tex}
 
@@ -14,23 +15,5 @@
 	\section{Một số ứng dụng của thặng dư}
 	\input{parts/2x-partial-fraction.tex}
 	\input{parts/2x-interpolation.tex}
-
-	\subsection{Khai triển Fourier \& Fourier ngược}
-	\begin{definition}[Khai triển fourier]
-		\textit{Khai triển fourier của hàm \(f\) được định nghĩa như sau:}
-		\begin{equation}
-			\hat{f}(s) = \mathfrak{F}[f](s)=\int_{-\infty}^\infty
-				f(t)\cdot e^{-ist}dt
-			\label{eq:fourier01}
-		\end{equation}
-	\end{definition}
-
-	\begin{definition}
-		[Khai triển Fourier ngược]
-		\textit{khai triển fourier ngược của hàm $\hat{f}(s)$ được định nghĩa:}
-		\begin{equation}
-			f(t) = \int_{-\infty}^\infty \hat{f}(s) e^{ist}ds
-			\label{eq:fourier02}
-		\end{equation}
-	\end{definition}
+	\input{parts/2x-inv-laplace.tex}
 \end{document}

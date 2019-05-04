@@ -1,0 +1,32 @@
+\begin{figure}[ht]
+	\begin{tikzpicture}
+		\node[anchor=south east] at (3,0) {$\sigma$};
+		\node at (3,0) {\textbullet};
+		\node[anchor=south west] at (0,2) {$jR$};
+		\node at (0,2) {\textbullet};
+		\node[anchor=north west] at (0,-2) {$-jR$};
+		\node at (0,-2){\textbullet};
+		\node[anchor=north west] at (1.41,1.41) {\(C\)};
+
+		\path[draw=black, ->]
+			(3,2) [-latex']arc[dashed, radius=2, start angle=90, end angle=150];
+		\path[draw=black]
+			(3,2) arc[dashed, radius=2, start angle=90, end angle=270];
+		\path[draw=black]
+		(0,-4) [-latex']-- (0,4);
+		\path[draw=black]
+		(-1,0) [-latex']-- (6,0);
+		\path[draw=black]
+		(3,2) [dashed]-- (0,2);
+		\path[draw=black]
+		(3,-2) [dashed]-- (0,-2);
+		\path[draw=black]
+			(3,-3) [-latex']-- (3,-0.5);
+		\path[draw=black]
+			(3,-0.5) -- (3,3);
+	\end{tikzpicture}
+	\centering
+	\caption{Hai nửa đường cong C}
+	\label{fig:fig2}
+\end{figure}
+
