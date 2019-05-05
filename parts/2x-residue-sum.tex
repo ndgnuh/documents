@@ -36,7 +36,7 @@ Do đó, công thức (\ref{eq:residue_sum_proof_01}) trở thành:
 	\frac{1}{2\pi i}\int_C \pi \cot(\pi z)f(z) dz &= \sum_{\forall z_k} \Res{\pi \cot(\pi z) f(z)}{z=z_k} + \sum_{\substack{n = -\infty\\n\notin \{z_k\}}}^{\infty} f(n)
 \end{align}
 
-Xét hàm $\cot(\pi z)$, $z = x + iy \in D$, tồn tại số thực $A>0$ sao cho:
+Xét hàm $\cot(\pi z)$, $z = x + iy \in C$, tồn tại số thực $A>0$ sao cho:
 \begin{align}
 	\label{eq:residue_sum_proof_04}
 	\abs{\cot(\pi z)}
@@ -75,9 +75,6 @@ Vì loại bỏ một số hữu hạn các số hạng ra khỏi tổng vô h�
 	\begin{align*}
 		\Res{\frac{\pi \cot(\pi z)}{z^2}}{z=0} 
 		&= \left.\frac{1}{2!}\cdot\frac{d^2}{dz^2}\left(\frac{\pi \cot(\pi z)}{z^2}\cdot z^3 \right) \right\rvert_{z=0}\\
-		&= \frac 1 2 \left.\left(\pi^{2} z \left(- \cot^{2}{\left(\pi z \right)} - 1\right) + \pi \cot{\left(\pi z \right)}
-		\right)\right\rvert_{z=0}\\ 
-		&= \frac 1 2 \left.\left(- 2 \pi^{3} z \left(- \cot^{2}{\left(\pi z \right)} - 1\right) \cot{\left(\pi z \right)} + 2 \pi^{2} \left(- \cot^{2}{\left(\pi z \right)} - 1\right)\right)\right\rvert_{z=0}\\
 		&= - \frac{ \pi^{2}}{3}
 	\end{align*}
 \end{example}
