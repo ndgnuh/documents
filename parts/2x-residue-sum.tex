@@ -16,6 +16,9 @@ Cho hàm $f(z)$ có hữu hạn cực điểm trên $\mathbb C$. Xét chuỗi $S
 \end{theorem}
 
 \textbf{Chứng minh:} Xét miền $D = [-N-\alpha; N + \alpha]^2$ với $N \in \mathbb N$, gọi $C$ là đường cong giới hạn $D$. Chọn $\alpha$ sao cho $\pi\cos(\pi z)f(z)$ giải tích trên $C$ (chọn được vì $f(z)$ có hữu hạn cực điểm còn $\pi\cos(\pi z)$ chỉ có cực điểm nguyên). Theo công thức định lý \ref{theorem:residue_integral}, ta có:
+
+\input{resources/fig-3.tex}
+
 \begin{equation}
 	\label{eq:residue_sum_proof_01}
 	\frac{1}{2\pi i}\int_C \pi \cot(\pi z)f(z) dz = \sum \Res{\pi \cot(\pi z) f(z)}{}
@@ -61,5 +64,10 @@ Vì loại bỏ một số hữu hạn các số hạng ra khỏi tổng vô h�
 
 Theo định lý \ref{theorem:residue_sum}, ta có:
 \begin{equation*}
-	\sum_{n=1}^\infty \frac 1 {n^2} = \frac{1}{2}\sum_{n=-\infty}^{\infty} \frac{1}{n^2} =-\frac{1}{2}\cdot\Res{\frac{\pi \cot(\pi z)}{z^2}}{z=0}  = \frac{\pi^2}6
+	 \sum_{n=-\infty}^{\infty} \frac{1}{n^2}=-\Res{\frac{\pi \cot(\pi z)}{z^2}}{z=0}  = \frac{\pi^2}3
+\end{equation*}
+
+Vì hàm $f(n)$ chẵn nên:
+\begin{equation*}
+	\sum_{n=1}^\infty \frac 1 {n^2} = \frac{1}{2}\sum_{n=-\infty}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
 \end{equation*}
