@@ -1,40 +1,58 @@
-Khai triển Laurent của hàm \(f(z)\) quanh điểm \(z_0\) là chuỗi lũy thừa:
-  \begin{equation}
-    \label{Laurent}
-    f(z) = \sum_{n = -\infty}^\infty a_n (z-z_0)^n
-  \end{equation}
-  Trong đó \(a_n\) được xác định bởi:
-  \begin{equation}
-    \label{LaurentTermCoef}
-    a_n = \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{(z-z_0)^{n+1}}dz
-  \end{equation}
-  Với \(\gamma\) là đường cong kín bao quanh \(z_0\) sao cho: tồn tại đường tròn \(\beta\) tâm \(z_0\), bán kính \(r > 0\), \(f(z)\) giải tích trên miền được giới hạn bởi \(\beta \cap \gamma\). 
-  \begin{figure}[h]
-    \centering
-    \input{resources/fig-1.tex}
-    \caption{Đường cong $\gamma$}
-    \label{fig.1}
-  \end{figure}
-  
-  Đặc biệt, khi \(n = -1\), ta có:
-  \begin{equation}
-    \label{a-1}
-    a_{(-1)} = \frac{1}{2\pi i }\oint_\gamma f(z)dz
-  \end{equation}
-  \(a_{-1}\) được gọi là thặng dư (residue) của \(f(z)\) tại điểm \(z_0\). Ký hiệu:
-  \begin{equation}
-    \label{residue}
-    \Res{f(z)}{z=z_0}= \frac{1}{2\pi i }\oint_\gamma f(z)dz
-  \end{equation}
+\begin{definition}
+	[Chuỗi Laurent]	
+	\label{def:laurent}
+	Khai triển Laurent của hàm \(f(z)\) quanh điểm \(z_0\) là chuỗi lũy thừa:
+	\begin{equation}
+		\label{Laurent}
+		f(z) = \sum_{n = -\infty}^\infty a_n (z-z_0)^n
+	\end{equation}
+	Trong đó \(a_n\) được xác định bởi:
+	\begin{equation}
+		\label{LaurentTermCoef}
+		a_n = \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{(z-z_0)^{n+1}}dz
+	\end{equation}
+\end{definition}
 
-  Với một hàm \(f(z)\) bất kì giải tích trên miền \(D\setminus \{z_0\}\), \(z_0\) là cực điểm cấp \(n\) của \(f(z)\), ta có thể tìm thặng dư của \(f(z)\) tại \(z_0\) bằng cách:
-  \begin{equation}
-    \label{find-res}
-    \Res{f(z)}{z=z_0} = \left. \frac{1}{(n-1)!} \cdot\frac{d^{n-1}}{dz^{n-1}}\left[(z-z_0)^nf(z)\right] \right\rvert_{z=z_0}
-  \end{equation}
 
-  Trong trường hợp \(z_0\) là cực điểm đơn giản:
-  \begin{equation}
-    \label{find-res-simple-pole}
-    \Res{f(z)}{z=z_0} = \left. \frac{p(z)}{q'(z)} \right\rvert_{z=z_0} \text{ với } f(z) = \frac{p(z)}{q(z)}
-  \end{equation}
+Với \(\gamma\) là đường cong kín bao quanh \(z_0\) sao cho: tồn tại đường tròn \(\beta\) tâm \(z_0\), bán kính \(r > 0\), \(f(z)\) giải tích trên miền được giới hạn bởi \(\beta \cap \gamma\). 
+\begin{figure}[h]
+	\centering
+	\input{resources/fig-1.tex}
+	\caption{Đường cong $\gamma$}
+	\label{fig.1}
+\end{figure}
+
+Đặc biệt, khi \(n = -1\), ta có:
+\begin{equation}
+	\label{a-1}
+	a_{(-1)} = \frac{1}{2\pi i }\oint_\gamma f(z)dz
+\end{equation}
+
+\begin{definition}
+	\label{def:residue}
+	\(a_{-1}\) được gọi là thặng dư (residue) của \(f(z)\) tại điểm \(z_0\). Ký hiệu:
+	\begin{equation}
+		\label{eq:residue}
+		\Res{f(z)}{z=z_0}= \frac{1}{2\pi i }\oint_\gamma f(z)dz
+	\end{equation}
+\end{definition}
+
+Với một hàm \(f(z)\) bất kì giải tích trên miền \(D\setminus \{z_0\}\), \(z_0\) là cực điểm cấp \(n\) của \(f(z)\), ta có thể tìm thặng dư của \(f(z)\) tại \(z_0\) bằng cách:
+\begin{equation}
+	\label{find-res}
+	\Res{f(z)}{z=z_0} = \left. \frac{1}{(n-1)!} \cdot\frac{d^{n-1}}{dz^{n-1}}\left[(z-z_0)^nf(z)\right] \right\rvert_{z=z_0}
+\end{equation}
+
+Trong trường hợp \(z_0\) là cực điểm đơn giản:
+\begin{equation}
+	\label{find-res-simple-pole}
+	\Res{f(z)}{z=z_0} = \left. \frac{p(z)}{q'(z)} \right\rvert_{z=z_0} \text{ với } f(z) = \frac{p(z)}{q(z)}
+\end{equation}
+
+\begin{theorem}
+	\label{theorem:residue_integral}
+	Nếu hàm $f(z)$ có các cực điểm $z_k$ trên miền $D$ giới hạn bởi đường cong $C$, ta có:
+	\begin{equation*}
+		\oint_{C} f(z)dz = 2\pi i \sum_{\forall z_k} \Res{f(z)}{z=z_k}
+	\end{equation*}
+\end{theorem}
