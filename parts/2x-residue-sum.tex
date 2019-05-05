@@ -9,7 +9,7 @@ Cho hàm $f(z)$ có hữu hạn cực điểm trên $\mathbb C$. Xét chuỗi $S
 
 \begin{theorem}
 	\label{theorem:residue_sum}
-	Giả sử $f(z)$ có các cực điểm $\{z_k\}$ và chuỗi $S$ như trên hội tụ. Khi đó chuỗi $S$ có thể được đánh giá qua công thức:
+Giả sử $f(z)$ có các cực điểm $\{z_k\}$ và chuỗi $S$ như trên hội tụ. $f(z)$ thỏa mãn với $M\in \mathbb R,\ M > 0$ và $k \in N, k > 2$ thì $f(z) < M/\abs{z}^k$. Khi đó chuỗi $S$ có thể được đánh giá qua công thức:
 	\begin{equation*}
 		\sum_{n = -\infty}^{\infty} f(n) = - \sum_{\forall z_k} \Res{\pi \cot(\pi z)f(z)}{z=z_k}
 	\end{equation*}
@@ -36,9 +36,29 @@ Do đó, công thức (\ref{eq:residue_sum_proof_01}) trở thành:
 	\frac{1}{2\pi i}\int_C \pi \cot(\pi z)f(z) dz &= \sum_{\forall z_k} \Res{\pi \cot(\pi z) f(z)}{z=z_k} + \sum_{\substack{n = -\infty\\n\notin \{z_k\}}}^{\infty} f(n)
 \end{align}
 
-Theo giả thiết, chuỗi $S$ hội tụ nên $f(z) \to 0$ khi $z\to \infty$. Do đó:
+Xét hàm $\cot(\pi z)$, $z = x + iy \in D$, tồn tại số thực $A>0$ sao cho:
+\begin{align}
+	\label{eq:residue_sum_proof_04}
+	\abs{\cot(\pi z)}
+	&\le \abs{\frac{e^{i\pi z} + e^{-i\pi z}}{e^{iz} - e^{-iz}}}\nonumber\\
+	&\le \frac{\abs{e^{i\pi z}}+\abs{e^{-i\pi z}}}{\abs{e^{i\pi z}}-\abs{e^{-i\pi z}}}\nonumber\\
+	&\le \frac{e^{y\pi} + e^{-y\pi}}{e^{y\pi}-e^{-y\pi}}\nonumber\\
+	&= \frac{1+e^{-2y\pi}}{1-e^{-2y\pi}}\le A
+\end{align}
+
+Theo giả thiết và (\ref{eq:residue_sum_proof_04}), ta có:
+\begin{align}
+	\abs{\pi\int_C \cot(\pi z) f(z) dz}
+	&\le \pi AM \int_C \frac{dz}{\abs{z}^k}\nonumber\\
+	&= \pi AM \int_C \frac{dz}{\abs{z}^k}
+\end{align}
+Vì trên đường cong $C$, $\abs{z} > N$ nên:
 \begin{equation}
-	\frac{1}{2\pi i}\int_C \pi \cot(\pi z)f(z) dz = 0
+	\abs{\pi\int_C \cot(\pi z) f(z) dz} \le \frac{8 AM\pi}{N^k}(N+\alpha)
+\end{equation}
+Vì $k > 1$ nên khi $N \to \infty$, ta có:
+\begin{equation}
+	\lim_{N\to \infty} \int_C \pi \cot(\pi z) f(z)dz  = 0
 \end{equation}
 hay:
 \begin{equation}
