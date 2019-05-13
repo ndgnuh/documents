@@ -18,4 +18,4 @@ pdflatex root.tex
 ```
 
 ## Giấy phép
-Giấy phép MIT, tức là muốn làm gì thì làm.
+Giấy phép GPL-3.0 hoặc hơn
