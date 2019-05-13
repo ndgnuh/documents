@@ -1,8 +1,8 @@
-# Ứng dụng thặng dư
-Mã nguồn của bài tập giải tích phức, ứng dụng thặng dư.
+# Bài tập các loại
+Một đống latex
 
 ## File pdf build sẵn
-Xem file pdf [tại đây](https://github.com/ndgnuh/ung-dung-thang-du/blob/master/root.pdf).
+(TBA)
 
 ## Build lại từ mã nguồn
 Yêu cầu:
@@ -14,8 +14,9 @@ babel-vietnamese (texlive package)
 
 Build:
 ```sh
+cd <document-name>
 pdflatex root.tex
 ```
 
 ## Giấy phép
-Giấy phép MIT, tức là muốn làm gì thì làm.
+Giấy phép GPL-3 hoặc hơn
