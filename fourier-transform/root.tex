@@ -1,0 +1,97 @@
+\documentclass[14pt]{extarticle}
+\usepackage[a4paper,top=2cm,left=2cm,bottom=2cm,right=2cm]{geometry}
+\usepackage[vietnamese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{calc}
+\linespread{1.15}
+
+\pagestyle{empty}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\caseif}[1]{\textnormal{nếu }#1}
+\newcommand{\transform}[2]{
+	\begin{minipage}[t]{0.1\textwidth}~\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}$\displaystyle#1$\end{minipage}
+	\begin{minipage}[t]{0.1\textwidth}$\displaystyle\to$\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}$\displaystyle#2$\end{minipage}\par
+}
+
+\begin{document}
+\begin{center}
+	\Large Biến đổi Fourier
+\end{center}
+\textbf{BIẾN ĐỔI FOURIER:}\par
+\transform{f(t)}{F(w)}
+\transform{\frac{1}{t}}{
+	\begin{cases}
+		-i &\caseif{w < 0}\\
+		0  &\caseif{w = 0}\\
+		i  &\caseif{w > 0}
+	\end{cases}
+}
+\transform{e^{-a\abs{t}}	\quad \quad (a > 0)}{\frac{2a}{a^2+w^2}		}
+\transform{te^{-a\abs{t}}	\quad \quad (a > 0)}{\frac{-4aiw}{(w^2+a^2)^2}	}
+\transform{\abs{t}e^{-a\abs{t}} \quad \quad (a > 0)}{\frac{2(a^2-w^2)}{a^2+w^2}	}
+\transform{e^{-a^2t^2}		\quad \quad (a > 0)}{\frac{\sqrt{\pi}}{a}\exp\left(-\frac{w^2}{4a^2}\right)}
+\transform{\frac 1 {a^2+t^2}	\quad \quad (a > 0)}{\frac{\pi}ae^{-a\abs{w}}	}
+\transform{\frac{t}{a^2+t^2}	\quad \quad (a > 0)}{\frac{\pi}ae^{-a\abs{w}}\cdot \frac{-iw}{2}}
+\transform{H(t+a)-H(t-a)	}{\frac{2\sin(aw)}{w}		}
+\transform{\delta(t)		}{1				}
+\transform{H(t)e^{-at}		}{\frac{1}{a+iw}		}
+
+\textbf{CÁC TÍNH CHẤT:}\par
+\transform{af(t) + bg(t)}{aF(w) +bG(w)}
+\transform{F(t)}{2\pi f(-w)}
+\transform{f(kt)}{\frac{1}{\abs{k}}F(\frac{w}{k})}
+\transform{\frac{1}{\abs{k}}f(\frac{t}{k})}{F(kw)}
+\transform{f(t-a)}{F(w)e^{-iaw}}
+\transform{f(t)e^{iat}}{F(w-a)}
+\transform{\frac{f(t+a)+f(t-a)}{2}}{\cos(aw)F(w)}
+\transform{\frac{f(t+a)-f(t-a)}{2i}}{\sin(aw)F(w)}
+\transform{\cos(at)f(t)}{\frac{F(w+a)+F(w-a)}{2}}
+\transform{\sin(at)f(t)}{-\frac{F(w+a)-F(w-a)}{2i}}
+\transform{\frac{d^n}{dt^n}f(t)}{(iw)^nF(w)}
+\transform{(-it)^nf(t)}{\frac{d^n}{dw^n}F(w)}
+\transform{f(t)\circledast g(t)}{F(w)\cdot G(w)}
+\transform{f(t)\cdot g(t)}{\frac{1}{2\pi}F(w)\circledast G(w)}
+
+\textbf{MỘT SỐ TÍNH CHẤT KHÁC}\par
+\begin{minipage}{0.1\textwidth}~\end{minipage}
+\begin{minipage}{0.9\textwidth}
+Định lý Parseval: 
+\begin{equation*}
+	\int_{-\infty}^{\infty} \abs{f(t)}^2dt = \frac{1}{2\pi}\int_{-\infty}^{\infty}\abs{F(w)}^2dw
+\end{equation*}
+Nếu $f(t) \in \mathbb R$:
+\begin{equation*}
+	F(-w) = \overline{F(w)}
+\end{equation*}
+Nếu $f(t) \in \mathbb R$, $f(t)$ chẵn:
+\begin{equation*}
+	\operatorname{Re}(F(w)) = 0
+\end{equation*}
+Nếu $f(t) \in \mathbb R$, $f(t)$ lẻ:
+\begin{equation*}
+	\operatorname{Im}(F(w)) = 0
+\end{equation*}
+\end{minipage}
+
+\vfill
+
+\begin{center}
+\hrulefill~END~\hrulefill
+\end{center}
+\begin{minipage}{0.5\textwidth}
+	\texttt{https://github.com/ndgnuh}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\begin{flushright}
+		\texttt{GPL-3.0}
+	\end{flushright}
+\end{minipage}
+
+
+\end{document}
