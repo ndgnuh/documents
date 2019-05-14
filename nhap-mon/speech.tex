@@ -1,0 +1,107 @@
+\documentclass[14pt]{extarticle}
+\usepackage[a4paper,top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}
+\usepackage[vietnamese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+\newcommand{\real}[1]{\operatorname{Re}{#1}}
+\newcommand{\imag}[1]{\operatorname{Im}{#1}}
+
+\begin{document}
+\section{Tổng quan về ngành học}
+Toán học là cơ sở cho bất kì lĩnh vực khoa học đương đại nào.
+
+\textbf{Các định hướng của ngành Toán -- Tin}
+\begin{itemize}
+	\item Toán cơ bản (toán nghiên cứu -- lý thuyết)
+	\item Toán ứng dụng
+	\item Tin học
+\end{itemize}
+
+\textbf{Các kiến thức được trang bị}\par
+Cung cấp tư duy logic, kiến thức nền tảng toán: giải tích, đại số tuyến tính, xác suất thống kê, tối ưu hóa, phương pháp tính, tối ưu tổ hợp, mô hình hóa, mô phỏng\ldots để mô hình hóa và giải quyết các bài toán thực tiễn như:
+\begin{itemize}
+	\item Phân tích dự báo
+	\item Đánh giá kịch bản
+	\item Quản trị rủi ro
+	\item Tối ưu lợi nhuận
+	\item \ldots
+\end{itemize}
+
+Cung cấp kiến thức nền tảng về tin học: cấu trúc dữ liệu, giải thuật, thuật toán, độ phức tạp, kĩ thuật lập trình, bảo mật, mạng máy tính\ldots
+
+\textbf{Điểm khác nhau giữa Toán -- Tin và Công Nghệ Thông Tin}\par
+
+\textbf{Toán tin ra trường làm gì?}\par
+
+\section{Giả thuyết Riemann}
+
+\textbf{Giả thuyết Riemann: }Những không điểm không tầm thường của hàm số $\zeta(s)$ đều có phần thực nằm trên đường thẳng $\real(s) = 1/2$.
+\begin{equation*}
+	\zeta(s) = \sum_{n=1}^\infty \frac 1 {n^s}
+\end{equation*}
+
+\textbf{Lịch sử nghiên cứu:}\\
+Thế kỉ 18, Euler đưa ra công thức trong một bài báo:
+\begin{equation*}
+	\zeta(s)=\sum_{n=1}^\infty \frac{1}{n^s} = \prod_p \frac{1}{1-p^{-s}}
+\end{equation*}
+trong đó $s$ là số thực, $p$ là tất cả các số nguyên tố. Euler đã chỉ ra rằng tích trên hội tụ với $s >1$. Đây là một phiên bản giải tích cho định lý cơ bản của số học.\par
+Cuối thế kỉ 20, viện toán học Clay liệt bài toán này vào trong bảy bài toán thiên niên kỉ. Từ 1859 cho đến nay, qua  hơn 150 năm vẫn chưa có lời giải cho giả thuyết Riemann.\par
+Bằng kiểm tra sức mạnh của máy tính người ta đã kiểm tra được có hàng tỉ không điểm trên đường thẳng $\real{s} = 1/2$\par
+Năm 1914, nhà toán học Hardy đã chứng minh trên đường thẳng $\real(s) = 1/2$ có vô số không điểm của hàm $\zeta$
+\begin{align*}
+	\lim_{T \to \infty}N_0(T) = \infty
+\end{align*}\par
+Năm 1921, Hardy -- Little Wood:
+\begin{align*}
+	\label{eq:}
+	N_0(T)	\ge C\cdot T, \quad C = \operatorname{const} > 0 
+\end{align*}\par
+Năm 1942, Albert Selberd:
+\begin{align*}
+	N_0(T) &\ge C\cdot T\log(T), \quad C = \operatorname{const}>0\\
+	N_0(T) &\le T\log(T) \tag{Riemann-Malgolt}\\
+	N_0(T) &\le CT\log(T)f(T), \quad f(T) \to \infty \textnormal{ khi }T \to \infty
+\end{align*}\par
+1974, Levinon:
+\begin{align*}
+	N_0(T) &> \frac 1 3 N(T)
+\end{align*}\par
+1989, Corney:
+\begin{align*}
+	N_0(T) > \frac 2 5 N(T)
+\end{align*}\par
+Trong đó $N(T)$ là số không điểm của $\zeta(s)$ mà có $0 <\imag{s} < T$, $N_0(T)$ là số không điểm mà $\real{s} = 1/2, 0 < \imag{s} < T$.
+
+\textbf{Ý nghĩa}\par
+Mật độ phân bố của số nguyên tố
+
+\section{Toán trong thực tế}
+\textbf{Operation Research}\par
+\textit{Operation Research} (hay \textit{OR}) là một phương pháp phân tích dùng trong việc giải quyết vấn đề và đưa ra các quyết định. Trong OR, vấn đề được tách ra thành những phần cơ bản và xử lý trong các bước bằng giải tích toán học.
+
+Những phương pháp toán học được sử dụng OR có thể bao gồm: logic toán học, mô phỏng, phân tích mạng lưới, lý thuyết hàng đợi, lý thuyết trò chơi\ldots
+
+Việc thực hiện OR có thể tổng quát hóa thành ba bước sau:
+\begin{enumerate}
+	\item Xây dựng một tập hợp những cách giải quyết thô cho một vấn đề nào đó. Tập hợp này có thể lớn.
+	\item Sau khi phân tích những cách giải quyết ở bước một được, đưa ra một tập hợp những giải pháp mà đã được chứng minh là khả thi.
+	\item Những giải pháp lý thuyết thu được ở bước hai được xây dựng thành giải pháp trong thực tế, kiểm tra qua giả lập, (hoặc trong đời thực, nếu có thể)
+\end{enumerate}
+
+\textbf{Một số cách mô hình hóa bài toán thực tế}
+\begin{itemize}
+	\item Quy hoạch tuyến tính
+	\item Quy hoạch lồi
+	\item Quy hoạch hồi quy
+	\item Quy hoạch động
+	\item \ldots
+\end{itemize}
+\end{document}
