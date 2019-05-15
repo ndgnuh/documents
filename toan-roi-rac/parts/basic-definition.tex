@@ -1,0 +1,150 @@
+
+\begin{definition}
+	Đồ thị $G$ là một cấu trúc rời rạc gồm các thành phần là tập ${V(G) = \{v_1,v_2,\cdots,v_n\}}$, $E(G) = \{e_1,e_2,\cdots,e_m\}$, được gọi một cách tương ứng là tập đỉnh và tập cạnh của đồ thị. Ký hiệu: $G = (V, E)$.
+\end{definition}
+Một số khái niệm liên quan:
+\begin{itemize}
+	\item Số cạnh của đồ thị gọi là \textit{bậc của đồ thị}, kí hiệu: $n(G)$ (hoặc $n$).
+	\item Mỗi phần tử thuộc $V(G)$ được gọi là một \textit{đỉnh} của $G$. Một phần tử thuộc $E(G)$ được gọi là một \textit{cạnh} của $G$.
+	\item Một cạnh của $G$ sẽ nối hai đỉnh của $G$. Nếu cạnh $v,u \in V(G)$ có cạnh nối giữa chúng thì nói $u$ \textit{kề} $v$. Cạnh được kí hiệu bằng một cặp đỉnh: $e = (u,v)$, khi đó $u,v$ gọi là \textit{đầu mút} của $e$.
+	\item \textit{Khuyên} là cạnh của đồ thị mà có hai đầu mút cùng là một đỉnh.
+	\item \textit{Hai cạnh song song} (hay còn gọi là \textit{cạnh đôi}) là hai cạnh mà có chung cặp đầu mút.
+	\item \textit{Bậc của đỉnh} $v$ là tổng số cạnh mà có $u$ là đầu mút. Nếu $v$ là đầu mút của một khuyên thì khuyên đó tính là 2 cạnh. Kí hiệu: $d(v)$
+	\item \textit{Bậc lớn nhất} trong $G$: $\Delta = \max\limits_{v\in V} \{d(v)\}$
+	\item \textit{Bậc nhỏ nhất} trong $G$: $\delta = \min\limits_{v\in V} \{d(v)\}$
+	\item \textit{Một đường đi} từ $v_1$ tới $v_n$ là một dãy sắp thứ tự các cạnh $(v_1v_2)$, $(v_2v_3),\cdots,(v_{n-1}v_n)$. $v_1$ gọi là \textit{đỉnh đầu} và $v_n$ gọi là \textit{đỉnh cuối}
+	\item \textit{Một chu trình} là đường đi mà có đỉnh đầu và đỉnh cuối trùng nhau.
+\end{itemize}
+\begin{figure}[ht]
+	\centering
+	\hfill
+	\begin{tikzpicture}
+		\node[vertice](v1) at (1,0) {};
+		\node[vertice](v2) at (1,2) {};
+		\node[vertice](v3) at (3,1.2) {};
+		\node[vertice](v4) at (0.3,1) {};
+		\node[vertice](v5) at (1.22,0.9) {};
+		\path[draw=black] 
+			(v1) to[in=-120, out=120] (v2)
+			(v3) to[in=30, out=100] (v4)
+			(v2) to[out=90, in=180] (v4)
+			(v5) arc[start angle=180, end angle=-180, radius=1em];
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}[scale=1, transform shape]
+		\node[vertice](v1) at (0,0) {};	
+		\node[vertice](v2) at (2,0) {};	
+		\node[vertice](v3) at (0,2) {};	
+		\node[vertice](v4) at (2,2) {};	
+		\path[draw=black]
+			(v2)--(v4)--(v3)--(v1)--(v2)--(v3);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		\node[vertice](v1) at (0,0) {};
+		\node[vertice](v2) at (2,0) {};
+		\node[vertice](v3) at (1,2) {};
+		\node[vertice](v4) at (1,0.7) {};
+		\path[draw=black](v1)--(v2)--(v3)--(v1)--(v4)--(v2)--(v3)(v4)--(v3);
+	\end{tikzpicture}
+	\hfill~
+	\caption{Minh họa một số đồ thị}
+\end{figure}
+
+{
+\begin{definition}[Đồ thị có hướng]
+	Đồ thị $G=(V,E)$ là đồ thị có hướng $\iff \forall (u,v)\in E,\ (u,v)$ sắp thứ tự. Khi đó $u$ gọi là đỉnh ra, $v$ là đỉnh vào, cạnh $(u,v)$ gọi là một cung.
+\end{definition}
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[thick, ->, >=stealth, scale=1, transform shape]
+	\node[vertice] (v1) at (0,2) {};
+	\node[vertice] (v2) at (1,0) {};
+	\node[vertice] (v3) at (3,0) {};
+	\node[vertice] (v4) at (2,2) {};
+	\draw (v1) -> (v2);
+	\draw (v2) -> (v3);
+	\draw (v3) -> (v4);
+	\draw (v2) -> (v4);
+	\draw (v4) -> (v1);
+\end{tikzpicture}
+\end{center}
+\caption{Đồ thị có hướng}
+\label{fig:do-thi-co-huong}
+\end{figure}
+}
+
+\begin{definition}
+	[Đồ thị có trọng số] Là đồ thị mà mỗi cạnh của nó được gắn với một trọng số.
+\end{definition}
+\begin{definition}
+	[Đồ thị con] Đồ thị $H$ gọi là đồ thị con của $G \iff V(H) \subseteq V(G) \land E(H) \subseteq E(G)$. Kí hiệu:$H \subseteq G$. Nếu $H \subseteq G$ và $V(H) = V(G) = V$ thì ta gọi $H$ là đồ thị con mở rộng của $G$.
+\end{definition}
+
+\begin{definition}
+	[Đồ thị đầy đủ/clique] Đồ thị $G$ là đồ thị đầy đủ (clique) $\iff$ mọi đỉnh của $G$ đều có cạnh nối giữa chúng. Đồ thị đầy đủ có $n$ đỉnh được kí hiệu là $K_n$. Đồ thị $\overline G$ được gọi là phủ của $G \iff$ $V(G)= V(\overline G)$ và $V(\overline G) = V(K_n) \setminus V(G)$
+\end{definition}
+\begin{figure}[htpb]
+\begin{center}
+\hfill
+\begin{tikzpicture}[thick]
+	\node[vertice](v1) at (0,0) {};
+	\node[vertice](v2) at (2,0) {};
+	\node[vertice](v3) at (2,2) {};
+	\node[vertice](v4) at (0,2) {};
+	\path[draw=black] (v1) -- (v2) (v1)--(v3) (v1)--(v4);
+\end{tikzpicture}\hfill
+\begin{tikzpicture}[thick]
+	\node[vertice](v1) at (0,0) {};
+	\node[vertice](v2) at (2,0) {};
+	\node[vertice](v3) at (2,2) {};
+	\node[vertice](v4) at (0,2) {};
+	\path[draw=black] (v2)--(v3)--(v4)--(v2);
+\end{tikzpicture}\hfill~
+\end{center}
+\caption{Đồ thị $G$ và $\overline G$}
+\label{fig:do-thi-g-va-g-ngang}
+\end{figure}
+
+\begin{definition}
+	[Đồ thị hai phía] Đồ thị $G$ là đồ thị 2 phía $\iff V(G) = V_1 \cup V_2$ với $V_1, V_2$ là tập độc lập, $V_1 \cap V_2 = \varnothing$. Nếu $\forall u \in V_1, v \in V_2, v \textnormal{ kề } u$ thì $G$ gọi là đồ thị hai phía đầy đủ và được kí hiệu là $K_{m,n}$ (với $m = \abs{V_1}, n = \abs{V_2}$).	
+\end{definition}
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[thick]
+	\node[vertice, fill=white] (v1) at (0,0){};	
+	\node[vertice, fill=white] (v2) at (3,0){};	
+	\node[vertice, fill=white] (v3) at (6,0){};	
+	\node[vertice] (v4) at (1.5,3){};	
+	\node[vertice] (v5) at (4.5,3){};	
+	\path[draw=black] (v1) -- (v4) -- (v2) -- (v5) -- (v3);
+	\path[draw=black] (v1) -- (v5) -- (v2) -- (v4) -- (v3);
+\end{tikzpicture}
+\end{center}
+\caption{Đồ thị hai phía đầy đủ $K_{2,3}$}
+\label{fig:do-thi-hai-phia-day-du-k23}
+\end{figure}
+
+\begin{definition}
+	[Tập độc lập] Tập độc lập trong đồ thị $G$ được định nghĩa bởi ${S = \{v \in V(G) \mid \textnormal{không có cặp đỉnh nào kề nhau} \}}$
+\end{definition}
+
+\begin{definition}
+	[Đồ thị liên thông] Đồ thị $G$ gọi là liên thông $\iff \forall\ u,v \in V,\ \exists$ đường đi từ $u$ tới $v$. Ngược lại, nếu $\exists\ u,v \in V,\ \nexists$ đường đi từ $u$ tới $v$ thì $G$ là đồ thị \textbf{không} liên thông.
+\end{definition}
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[thick]
+	\node[vertice, fill=white] (v1) at (0,0){};	
+	\node[vertice, fill=white] (v3) at (6,0){};	
+	\node[vertice, fill=white] (v5) at (3,3){};	
+	\node[vertice] (v2) at (3,0){};	
+	\node[vertice] (v4) at (0,3){};	
+	\node[vertice] (v6) at (6,3){};	
+	\path[draw=black] (v1) -- (v5) -- (v3);
+	\path[draw=black] (v4) -- (v2) -- (v6);
+\end{tikzpicture}
+\end{center}
+\caption{Đồ thị không liên thông}
+\label{fig:do-thi-khong-lien-thong}
+\end{figure}

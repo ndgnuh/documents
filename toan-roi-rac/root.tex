@@ -11,7 +11,7 @@
 \usepackage{mathtools}
 
 \usetikzlibrary{arrows}
-\tikzstyle{vertice}=[circle, draw=black, fill=cyan, inner sep=0.15em]
+\tikzstyle{vertice}=[circle, draw=black, fill=black, inner sep=0.15em]
 \setlength{\parindent}{0pt}
 \linespread{1.15}
 
@@ -20,84 +20,13 @@
 \newtheorem{theorem}{Định lý}[section]
 \newtheorem{lemma}{Bổ đề}[section]
 
-\tikzstyle{vertice}=[circle, draw=black, fill=cyan, inner sep=0.15em]
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 
 
 \begin{document}
 % \tableofcontents\pagebreak
 \section{Đồ thị}
-\begin{definition}
-	Đồ thị $G$ là một cấu trúc rời rạc gồm các thành phần là tập ${V(G) = \{v_1,v_2,\cdots,v_n\}}$, $E(G) = \{e_1,e_2,\cdots,e_m\}$, được gọi một cách tương ứng là tập đỉnh và tập cạnh của đồ thị. Ký hiệu: $G = (V, E)$.
-\end{definition}
-Một số khái niệm liên quan:
-\begin{itemize}
-	\item Số cạnh của đồ thị gọi là \textit{bậc của đồ thị}, kí hiệu: $n(G)$ (hoặc $n$).
-	\item Mỗi phần tử thuộc $V(G)$ được gọi là một \textit{đỉnh} của $G$. Một phần tử thuộc $E(G)$ được gọi là một \textit{cạnh} của $G$.
-	\item Một cạnh của $G$ sẽ nối hai đỉnh của $G$. Nếu cạnh $v,u \in V(G)$ có cạnh nối giữa chúng thì nói $u$ \textit{kề} $v$. Cạnh được kí hiệu bằng một cặp đỉnh: $e = (u,v)$, khi đó $u,v$ gọi là \textit{đầu mút} của $e$.
-	\item \textit{Khuyên} là cạnh của đồ thị mà có hai đầu mút cùng là một đỉnh.
-	\item \textit{Hai cạnh song song} (hay còn gọi là \textit{cạnh đôi}) là hai cạnh mà có chung cặp đầu mút.
-	\item \textit{Bậc của đỉnh} $v$ là tổng số cạnh mà có $u$ là đầu mút. Nếu $v$ là đầu mút của một khuyên thì khuyên đó tính là 2 cạnh. Kí hiệu: $d(v)$
-	\item \textit{Bậc lớn nhất} trong $G$: $\Delta = \max\limits_{v\in V} \{d(v)\}$
-	\item \textit{Bậc nhỏ nhất} trong $G$: $\delta = \min\limits_{v\in V} \{d(v)\}$
-\end{itemize}
-\begin{figure}[ht]
-	\centering
-	\hfill
-	\begin{tikzpicture}
-		\node[vertice](v1) at (1,0) {};
-		\node[vertice](v2) at (1,2) {};
-		\node[vertice](v3) at (3,1.2) {};
-		\node[vertice](v4) at (0.3,1) {};
-		\node[vertice](v5) at (1.22,0.9) {};
-		\path[draw=black] 
-			(v1) to[in=-120, out=120] (v2)
-			(v3) to[in=30, out=100] (v4)
-			(v2) to[out=90, in=180] (v4)
-			(v5) arc[start angle=180, end angle=-180, radius=1em];
-	\end{tikzpicture}
-	\hfill
-	\begin{tikzpicture}[scale=1, transform shape]
-		\node[vertice](v1) at (0,0) {};	
-		\node[vertice](v2) at (2,0) {};	
-		\node[vertice](v3) at (0,2) {};	
-		\node[vertice](v4) at (2,2) {};	
-		\path[draw=black]
-			(v2)--(v4)--(v3)--(v1)--(v2)--(v3);
-	\end{tikzpicture}
-	\hfill
-	\begin{tikzpicture}
-		\node[vertice](v1) at (0,0) {};
-		\node[vertice](v2) at (2,0) {};
-		\node[vertice](v3) at (1,2) {};
-		\node[vertice](v4) at (1,0.7) {};
-		\path[draw=black](v1)--(v2)--(v3)--(v1)--(v4)--(v2)--(v3)(v4)--(v3);
-	\end{tikzpicture}
-	\hfill~
-	\caption{Minh họa một số đồ thị}
-\end{figure}
-
-\begin{definition}[Đồ thị có hướng]
-	Đồ thị $G=(V,E)$ là đồ thị có hướng $\iff \forall (u,v)\in E,\ (u,v)$ sắp thứ tự. Khi đó $u$ gọi là đỉnh ra, $v$ là đỉnh vào, cạnh $(u,v)$ gọi là một cung.
-\end{definition}
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}[->, >=stealth, scale=1, transform shape]
-	\node[vertice] (v1) at (0,2) {};
-	\node[vertice] (v2) at (1,0) {};
-	\node[vertice] (v3) at (3,0) {};
-	\node[vertice] (v4) at (2,2) {};
-	\draw (v1) -> (v2);
-	\draw (v2) -> (v3);
-	\draw (v3) -> (v4);
-	\draw (v2) -> (v4);
-	\draw (v4) -> (v1);
-\end{tikzpicture}
-\end{center}
-\caption{Đồ thị có hướng}
-\label{fig:do-thi-co-huong}
-\end{figure}
-
-
+\input{parts/basic-definition.tex}
 
 \section{Ma trận biểu diễn và đồng cấu}
 \section{Đường đi và chu trình}
