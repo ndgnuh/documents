@@ -10,6 +10,8 @@
 \usepackage{parskip}
 \usepackage{mathtools}
 
+\usetikzlibrary{arrows}
+\tikzstyle{vertice}=[circle, draw=black, fill=cyan, inner sep=0.15em]
 \setlength{\parindent}{0pt}
 \linespread{1.15}
 
@@ -17,9 +19,9 @@
 \newtheorem{example}{Ví dụ}[section]
 \newtheorem{theorem}{Định lý}[section]
 \newtheorem{lemma}{Bổ đề}[section]
-\newtheorem{proposition}{Mệnh đề}[section]
 
 \tikzstyle{vertice}=[circle, draw=black, fill=cyan, inner sep=0.15em]
+
 
 \begin{document}
 % \tableofcontents\pagebreak
@@ -72,8 +74,30 @@ Một số khái niệm liên quan:
 	\end{tikzpicture}
 	\hfill~
 	\caption{Minh họa một số đồ thị}
-	\label{fig:sample_graph}
 \end{figure}
+
+\begin{definition}[Đồ thị có hướng]
+	Đồ thị $G=(V,E)$ là đồ thị có hướng $\iff \forall (u,v)\in E,\ (u,v)$ sắp thứ tự. Khi đó $u$ gọi là đỉnh ra, $v$ là đỉnh vào, cạnh $(u,v)$ gọi là một cung.
+\end{definition}
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[->, >=stealth, scale=1, transform shape]
+	\node[vertice] (v1) at (0,2) {};
+	\node[vertice] (v2) at (1,0) {};
+	\node[vertice] (v3) at (3,0) {};
+	\node[vertice] (v4) at (2,2) {};
+	\draw (v1) -> (v2);
+	\draw (v2) -> (v3);
+	\draw (v3) -> (v4);
+	\draw (v2) -> (v4);
+	\draw (v4) -> (v1);
+\end{tikzpicture}
+\end{center}
+\caption{Đồ thị có hướng}
+\label{fig:do-thi-co-huong}
+\end{figure}
+
+
 
 \section{Ma trận biểu diễn và đồng cấu}
 \section{Đường đi và chu trình}
