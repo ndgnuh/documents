@@ -25,13 +25,32 @@
 
 \begin{document}
 % \tableofcontents\pagebreak
+\hspace{1cm}\vfill
+\begin{center}
+	\textit{Trong bài viết, những định nghĩa, khái niệm, hoặc có chung biểu diễn tiếng Việt với nhau, hoặc chưa có từ tiếng Việt tương ứng, sẽ được giữ nguyên gốc tiếng Anh.}
+\end{center}
+\vfill
+
+\pagebreak
 \section{Đồ thị}
 \input{parts/basic-definition.tex}
 
 \section{Ma trận biểu diễn và đẳng cấu}
 \input{parts/ma-tran-bieu-dien.tex}
 
-% \section{Đường đi và chu trình}
+\section{Đường đi và chu trình}
+\begin{definition}
+	[đường đi]
+	Một \textbf{đường đi} (kí hiệu W) có độ dài $k$ là một dãy các \textbf{đỉnh và cạnh} $v_0, e_1, v_1, e_2,\cdots,e_k,v_k$ với $e_i = (v_{i-1},v_i)$. Độ dài của một đường đi kí hiệu là $l(W)$. Đỉnh $v_0$ gọi là đỉnh đầu và $v_k$ gọi là đỉnh cuối.
+\end{definition}
+\begin{definition}
+	[trail, path]	Một \textbf{trail} là một đường đi mà không có cạnh nào bị lặp lại. Một \textbf{path} là đường đi mà không có đỉnh nào lặp lại.
+\end{definition}
+Đường đi, trail và path có độ dài lớn hơn một và đỉnh đầu, cuối trùng nhau thì được gọi là \textit{đóng}.
+\begin{definition}
+	[chu trình] Một chu trình là một trail mà chỉ có đỉnh đầu và đỉnh cuối trùng nhau.
+\end{definition}
+Có thể thấy chu trình với độ dài 1 là một khuyên.
 % \section{Bậc của đỉnh}
 % \section{Các phép toán trên đồ thị}
 % \section{Một số kĩ thuật cơ bản}
