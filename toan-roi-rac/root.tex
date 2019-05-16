@@ -25,12 +25,13 @@
 \newtheorem{theorem}{Định lý}[section]
 \newtheorem{lemma}{Bổ đề}[section]
 \newtheorem{proposition}{Mệnh đề}[section]
+\newtheorem{corolarry}{Hệ quả}[section]
 
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 
 
 \begin{document}
-% \tableofcontents\pagebreak
+\tableofcontents\pagebreak
 
 % \hspace{1cm}\vfill
 % \begin{center}
@@ -76,8 +77,53 @@ Một cạnh của $G$ là cạnh cắt $\iff$ cạnh đó không thuộc chu tr
 		Giả sử $G$ không liên thông, $H_i,\, i = \overline{1,k}$ là các thành phần liên thông của $G$. Nếu xóa một đỉnh khỏi $H_i$ thì không làm thay đổi số thành phần liên thông, trừ khi $H_i = K_1$ (giảm đi còn $k-1$ thành phần liên thông). Nếu 2 trong số $G-v_1,G-v_2,\ldots,G-v_n$ liên thông thì $k = 2$ và $H_1 = H_2 = K_1$, mâu thuẫn với $n \ge 3$.
 	\end{proof}
 \end{proposition}
-% \section{Bậc của đỉnh}
-% \section{Các phép toán trên đồ thị}
-% \section{Một số kĩ thuật cơ bản}
-% \section{Chuỗi bậc}
+
+\begin{corolarry} Mọi đồ thị $G$ mà chứa ít nhất một cạnh thì có ít nhất hai đỉnh không phải là đỉnh cắt\end{corolarry}
+\begin{theorem}
+Một đồ thị là một đồ thị hai phía $\iff$ nó không chứa chu trình độ dài lẻ.	
+\begin{proof}
+	Giả sử $G$ là một đồ thị hai phía, khi đó mọi đường đi trên $G$ đều chuyển qua chuyển lại giữa các đỉnh thuộc $V_1$ và $V_2$. Vì vậy, nếu muốn quay lại điểm bắt đầu thì đường đi buộc phải có độ dài chẵn.\\
+	Giả sử $G$ không có chu trình độ dài chẵn. $G$ liên thông. Chọn cố định điểm $u$ thuộc $V(G)$. Với mọi điểm $v \in V(G)$, mọi đường đi từ $u$ tới $v$ đều phải có độ dài cùng chẵn hoặc cùng lẻ, nếu không sẽ tạo ra một chu trình độ dài lẻ (mâu thuẫn). Ta phân hoạch $V(G)$ thành 2 tập $V_1 = \{v\mid$ đường đi từ $u$ tới $v$ độ dài lẻ $\}$ và $V_2 = \{v\mid$ đường đi từ $u$ tới $v$ độ dài chẵn $\}$. Thấy được $V_1$ là một tập độc lập vì một cạnh nối giữa hai đỉnh của $V_1$ sẽ tạo ra một chu trình độ dài lẻ. Ta có điều tương tự với $V_2$. Do đó $G$ là một đồ thị hai phía.
+\end{proof}
+\end{theorem}
+\section{Bậc của các đỉnh trong đồ thị}
+\label{sec:bac_cua_dinh}
+\begin{theorem}
+	\label{theo:tong_bac_cua_dinh} Cho một đồ thị $G$, tổng bậc của các đỉnh trong $G$ bằng 2 lần số cạnh của $G$.
+	\begin{equation*}
+		\sum_{\mathclap{\forall v \in V(G)}}d(v) = 2\abs{E(G)}
+	\end{equation*}
+	\begin{proof}
+		Với mỗi $e \in E(G)$, $e$ có hai đầu mút, làm tăng bậc của $2$ đỉnh đầu mút của nó lên 1 và do đó tăng tổng số bậc của đồ thị lên 2.
+	\end{proof}
+\end{theorem}
+\begin{corolarry}
+Số đỉnh bậc lẻ trong một đồ thị luôn là số chẵn. Không có đồ thị chính quy nào có bậc lẻ.
+\end{corolarry}
+\begin{corolarry}
+	Đồ thị $k$ -- chính quy với $n$ đỉnh có $nk/2$ cạnh.
+\end{corolarry}
+
+\section{Một số kĩ thuật trên đồ thị}
+\begin{proposition}
+	Với $n > 2$, có $2^{C_{n-1}^2}$ đồ thị đơn giản với tập đỉnh $v_1, v_2, v_3, \ldots, v_n$ mà bậc của mỗi đỉnh đều chẵn.
+\end{proposition}
+\begin{proposition}
+	Đồ thị đơn giản mà có nhiều hơn một đỉnh thì có hai đỉnh với bậc bằng nhau.
+	\begin{proof}
+		Trong đồ thị với $n$ đỉnh, bậc của các đỉnh nhận giá trị trong tập $\left\{0,1,2,3,\ldots,n-1\right\}$. Tuy nhiên, giá trị $0$ và $n-1$ sẽ không xuất hiện cùng một lúc vì đỉnh có bậc $n-1$ sẽ kề với mọi đỉnh, đỉnh có bậc $0$ là cô lập, 2 đỉnh như trên không thể cùng xuất hiện trong một đồ thị. Do đó, số giá trị bậc các đỉnh của $G$ luôn bé hơn $n$, theo nguyên líDirichlet, mệnh đề được chứng minh.
+	\end{proof}
+\end{proposition}
+\begin{proposition}
+	Nếu $G$ là đồ thị đơn giản với $n$ đỉnh và $\delta(G) \ge (n-1)/2$ thì $G$ liên thông.
+	\begin{proof}
+		Lấy 2 đỉnh $u,v \in V(G)$. Giả sử $u,v$ không kề nhau. Vì $\delta(G) \ge (n-1)/2$, sẽ có ít nhất $n-1$ cạnh để nối $u$ hoặc $v$ tới các đỉnh khác. Tuy nhiên chỉ có $n-2$ cạnh, do đó theo nguyên lí Dirichlet, sẽ có một đỉnh nào đó kề với cả $u$ và $v$. Vậy mỗi cặp đỉnh trong $G$ đều tồn tại một đường đi giữa chúng.
+	\end{proof}
+\end{proposition}
+\begin{theorem}
+	Cho đồ thị $G$ không có khuyên. Khi đó $G$ có một đồ thị con là đồ thị hai phía với ít nhất $\abs{E(G)}/2$ cạnh
+	\begin{proof}
+		Phân hoạch tập đỉnh của $G$ thành hai tập $V_1$ và $V_2$. Lấy các cạnh $e=uv$ sao cho $u \in V_1$ và $v\in V_2$ đưa vào tập $E(H)$. Khi đó ta thu được đồ thị $H = (V_1,V_2,E(H))$ là đồ thị con 2 phía của $G$. Giả sử cạnh $v \in V(H)$ có ít hơn $\abs{E(G)}/2$ cạnh nối với nó. (tba)<++>
+	\end{proof}
+\end{theorem}
 \end{document}
