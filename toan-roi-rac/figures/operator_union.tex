@@ -1,0 +1,35 @@
+\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[vertice, fill=white] (p1) at (0,0) {};
+			\node[vertice, fill=white] (p2) at (0,2) {};
+			\node[vertice] (c1) at (2,0) {};
+			\node[vertice] (c2) at (4,0) {};
+			\node[vertice] (c3) at (3,2) {};
+			\path[draw=black] (p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[vertice, fill=white] (p1) at (0,0) {};
+			\node[vertice, fill=white] (p2) at (0,2) {};
+			\node[vertice] (c1) at (2,0) {};
+			\node[vertice] (c2) at (4,0) {};
+			\node[vertice] (c3) at (3,2) {};
+			\path[draw=black] 
+				(p2)[dashed]--(c1)(p2)[dashed]--(c2)(p2)[dashed]--(c3)
+				(p1)[dashed]--(c1)(p1)[dashed]--(c2)(p1)[dashed]--(c3);
+			\path[draw=black]
+				(p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+\end{center}
+\caption{hợp/hội đồ thị $p_2$ và $c_3$}
+\label{fig:hop_hoi_do_thi_p2_c3}
+\end{figure}
+
