@@ -41,89 +41,189 @@
 % \pagebreak
 
 \section{Đồ thị}
-\input{parts/basic-definition.tex}
+% \input{parts/basic-definition.tex}
 
 \section{Ma trận biểu diễn và đẳng cấu}
-\input{parts/ma-tran-bieu-dien.tex}
+% \input{parts/ma-tran-bieu-dien.tex}
 
 \section{Đường đi và chu trình}
-\begin{definition}[đường đi]
-	\label{def:duong-di}
-	Một \textbf{đường đi} (kí hiệu W) có độ dài $k$ là một dãy các \textbf{đỉnh và cạnh} $v_0, e_1, v_1, e_2,\cdots,e_k,v_k$ với $e_i = (v_{i-1},v_i)$. Độ dài của một đường đi kí hiệu là $l(W)$. Đỉnh $v_0$ gọi là đỉnh đầu và $v_k$ gọi là đỉnh cuối. Nếu không có cạnh nào lặp lại, đường đi gọi là đơn. Nếu không có đỉnh nào lặp lại, đường đi gọi là sơ cấp.
+% \input{parts/path-and-cycle.tex}
+
+\section{Các phép toán trên đồ thị}
+\label{sec:cac_phep_toan_tren_do_thi}
+\begin{definition}
+	[Phép hợp] Đồ thị $G = (V,E)$ gọi là hợp của đồ thị $G_1$ và $G_2 \iff V(G) = V(G_1) \cup V(G_2)$ và $E(G) = E(G_1) \cup E(G_2)$. Ký hiệu $G = G_1\cup G_2$. Nếu $V_1 \cap V_2 = \varnothing$ ta viết $G = G_1 + G_2$. Ta cũng định nghĩa $mG$ là hợp $m$ lần các bản sao của $G$.
 \end{definition}
-\begin{definition}[chu trình]
-	\label{def:chu-trinh}
-	 Một chu trình là một đường đi đơn mà có đỉnh đầu và đỉnh cuối trùng nhau. Nếu chỉ có đỉnh đầu và đỉnh cuối trùng nhau thì chu trình gọi là sơ cấp.
+\begin{definition}
+	[Phép hội] Đồ thị $G = G_1 \lor G_2 \iff$ $V(G) = V(G_1 + G_2) \land E(G) = E(G_1 +G_2) \cup \left\{e=uv\mid u \in V_1, v \in V_2\right\}$ (Đồ thị $G_1 +G_2$ thêm vào những cạnh nối giữa các đỉnh của chúng).
 \end{definition}
-Có thể thấy chu trình với độ dài 1 là một khuyên.
-\begin{proposition}
-	Đồ thị $G$ là liên thông $\iff ({\exists uv \in E})({ u\in V_1})({v \in V_2})$ với mọi $V_1,\,V_2 \ne \varnothing$ mà $V = V_1\cup V_2,\, V_1 \cap V_2 = \varnothing$ ($V_1,\,V_2$ là phân hoạch không rỗng của $V$)
-	\begin{proof}
-		Giả sử $G$ liên thông. Khi đó tồn tại một đường đi sơ cấp từ $u$ tới $v$, trên đường đi đó, sau đỉnh cuối cùng của $V_1$ mà nó đi qua là cạnh nối giữa $V_1$ và $V_2$. Giả sử $G$ không liên không. Chứng minh được chiều xuôi.\\
-		Gọi $H$ là một thành phần liên thông của $G$, chọn $V_1 = V(H)$. Khi đó không có cạnh nào của $G$ có một đầu mút thuộc $V_1$ và đầu mút còn lại thuộc $V_2$. Bằng cách đảo vế chứng minh được chiều ngược.
-	\end{proof}
-\end{proposition}
 
-\begin{theorem}
-Một cạnh của $G$ là cạnh cắt $\iff$ cạnh đó không thuộc chu trình sơ cấp nào.	
-\begin{proof}
-	Gọi $e=(uv)$ là một cạnh trong thành phần liên thông $H$ của $G$. Nếu đồ thị thu được từ $H$ bỏ đi $e$ (kí hiệu $H-e$) vẫn liên thông, thì tồn tại một đường đi sơ cấp từ $u$ tới $v$. Có thể thấy đường đi này nếu gắn thêm cạnh $e$ sẽ tạo thành một chu trình sơ cấp. Vậy nếu $e$ không phải cạnh cắt thì sẽ thuộc một chu trình sơ cấp. Nếu $e$ là cạnh cắt, $H$ bỏ đi $e$ không liên thông, không tồn tại đường đi từ $u$ tới $v$. (TBA?)
-\end{proof}
-\end{theorem}
+\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[vertice, fill=white] (p1) at (0,0) {};
+			\node[vertice, fill=white] (p2) at (0,2) {};
+			\node[vertice] (c1) at (2,0) {};
+			\node[vertice] (c2) at (4,0) {};
+			\node[vertice] (c3) at (3,2) {};
+			\path[draw=black] (p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[vertice, fill=white] (p1) at (0,0) {};
+			\node[vertice, fill=white] (p2) at (0,2) {};
+			\node[vertice] (c1) at (2,0) {};
+			\node[vertice] (c2) at (4,0) {};
+			\node[vertice] (c3) at (3,2) {};
+			\path[draw=black] 
+				(p2)[dashed]--(c1)(p2)[dashed]--(c2)(p2)[dashed]--(c3)
+				(p1)[dashed]--(c1)(p1)[dashed]--(c2)(p1)[dashed]--(c3);
+			\path[draw=black]
+				(p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+\end{center}
+\caption{hợp/hội đồ thị $p_2$ và $c_3$}
+\label{fig:hop_hoi_do_thi_p2_c3}
+\end{figure}
 
-\begin{proposition}
-	Cho đồ thị $G = (V,E)$, $V=\{v_1, v_2,\ldots,v_n\}$ với $n \ge 3$. Nếu có ít nhất 2 trong các đồ thị con $G-v_1,G-v_2,\ldots,G-v_n$ ($G$ xóa đi đỉnh $v_i$) liên thông thì $G$ liên thông.
-	\begin{proof}
-		Giả sử $G$ không liên thông, $H_i,\, i = \overline{1,k}$ là các thành phần liên thông của $G$. Nếu xóa một đỉnh khỏi $H_i$ thì không làm thay đổi số thành phần liên thông, trừ khi $H_i = K_1$ (giảm đi còn $k-1$ thành phần liên thông). Nếu 2 trong số $G-v_1,G-v_2,\ldots,G-v_n$ liên thông thì $k = 2$ và $H_1 = H_2 = K_1$, mâu thuẫn với $n \ge 3$.
-	\end{proof}
-\end{proposition}
+\begin{definition}
+	[tích descartes] Đồ thị $G = G_1 \times G_2$ là đồ thị mà $V(G) = \left\{(v_i,u_i)\right\}$ $v_i \in V_1,\, u_i \in V_2$. Có $k$ cạnh nối $(v_i,u_i)$ với $(v_j,u_j) \iff {(v_i = v_j)} \land (u_i $ nối với $u_j$ $k$ lần  trong $G_2)$ hoặc ${(u_i = u_j)} \land (v_i $ nối với $v_j$ $k$ lần  trong $G_1)$.
+\end{definition}
 
-\begin{corolarry} Mọi đồ thị $G$ mà chứa ít nhất một cạnh thì có ít nhất hai đỉnh không phải là đỉnh cắt\end{corolarry}
-\begin{theorem}
-Một đồ thị là một đồ thị hai phía $\iff$ nó không chứa chu trình độ dài lẻ.	
-\begin{proof}
-	Giả sử $G$ là một đồ thị hai phía, khi đó mọi đường đi trên $G$ đều chuyển qua chuyển lại giữa các đỉnh thuộc $V_1$ và $V_2$. Vì vậy, nếu muốn quay lại điểm bắt đầu thì đường đi buộc phải có độ dài chẵn.\\
-	Giả sử $G$ không có chu trình độ dài chẵn. $G$ liên thông. Chọn cố định điểm $u$ thuộc $V(G)$. Với mọi điểm $v \in V(G)$, mọi đường đi từ $u$ tới $v$ đều phải có độ dài cùng chẵn hoặc cùng lẻ, nếu không sẽ tạo ra một chu trình độ dài lẻ (mâu thuẫn). Ta phân hoạch $V(G)$ thành 2 tập $V_1 = \{v\mid$ đường đi từ $u$ tới $v$ độ dài lẻ $\}$ và $V_2 = \{v\mid$ đường đi từ $u$ tới $v$ độ dài chẵn $\}$. Thấy được $V_1$ là một tập độc lập vì một cạnh nối giữa hai đỉnh của $V_1$ sẽ tạo ra một chu trình độ dài lẻ. Ta có điều tương tự với $V_2$. Do đó $G$ là một đồ thị hai phía.
-\end{proof}
-\end{theorem}
-\section{Bậc của các đỉnh trong đồ thị}
-\label{sec:bac_cua_dinh}
-\begin{theorem}
-	\label{theo:tong_bac_cua_dinh} Cho một đồ thị $G$, tổng bậc của các đỉnh trong $G$ bằng 2 lần số cạnh của $G$.
-	\begin{equation*}
-		\sum_{\mathclap{\forall v \in V(G)}}d(v) = 2\abs{E(G)}
-	\end{equation*}
-	\begin{proof}
-		Với mỗi $e \in E(G)$, $e$ có hai đầu mút, làm tăng bậc của $2$ đỉnh đầu mút của nó lên 1 và do đó tăng tổng số bậc của đồ thị lên 2.
-	\end{proof}
-\end{theorem}
-\begin{corolarry}
-Số đỉnh bậc lẻ trong một đồ thị luôn là số chẵn. Không có đồ thị chính quy nào có bậc lẻ.
-\end{corolarry}
-\begin{corolarry}
-	Đồ thị $k$ -- chính quy với $n$ đỉnh có $nk/2$ cạnh.
-\end{corolarry}
+\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}{0.4\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[label={[label distance=1pt]180:$p_1$}, vertice, fill=white] (p1) at (0,0) {};
+			\node[label={[label distance=1pt]180:$p_2$}, vertice, fill=white] (p2) at (0,2) {};
+			\node[label={[label distance=1pt]180:$c_1$}, vertice, fill=black] (c1) at (2,0) {};
+			\node[label={[label distance=1pt]000:$c_2$}, vertice, fill=black] (c2) at (4,0) {};
+			\node[label={[label distance=1pt]000:$c_3$}, vertice, fill=black] (c3) at (3,2) {};
+			\path[draw=black] (p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}[m]{0.05\textwidth}
+		$\implies$
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[label={[label distance=1pt]270:$(c_1,p_1)$}, vertice] (c1p1) at (0,0) {};
+			\node[label={[label distance=1pt]090:$(c_1,p_2)$}, vertice] (c1p2) at (0,2) {};
+			\node[label={[label distance=1pt]270:$(c_2,p_1)$}, vertice] (c2p1) at (2,0) {};
+			\node[label={[label distance=1pt]090:$(c_2,p_2)$}, vertice] (c2p2) at (2,2) {};
+			\node[label={[label distance=1pt]270:$(c_3,p_1)$}, vertice] (c3p1) at (4,0) {};
+			\node[label={[label distance=1pt]090:$(c_3,p_2)$}, vertice] (c3p2) at (4,2) {};
+			\path[draw=black] 
+				(c1p1)--(c2p1)--(c3p1) to[in =  30,out=150] (c1p1)
+				(c1p2)--(c2p2)--(c3p2) to[out=-150,in =-30] (c1p2)
+				(c3p1)--(c3p2)
+				(c2p1)--(c2p2)
+				(c1p1)--(c1p2);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+\end{center}
+\caption{Tích descartes $P_2 \times C_3$}
+\label{fig:hop_hoi_do_thi_p2_c3}
+\end{figure}
+\begin{definition}
+	[tích tensor] Tích tensor của $G$, kí hiệu $G_1 \cdot G_2$, là một đồ thị với $V(G) = V(G_1) \times V(G_2)$. Với $u_i \in V_1$, $v_i \in V_2$, có $k$ cạnh nối giữa $(u_i,v_i)$ và $(u_j,v_j) \iff ($có $m$ cạnh nối $u_i$ với $u_j$, $n$ cạnh nối $v_i$ với $v_j) \land (k = m\cdot n)$.
+\end{definition}
 
-\section{Một số kĩ thuật trên đồ thị}
-\begin{proposition}
-	Với $n > 2$, có $2^{C_{n-1}^2}$ đồ thị đơn giản với tập đỉnh $v_1, v_2, v_3, \ldots, v_n$ mà bậc của mỗi đỉnh đều chẵn.
-\end{proposition}
-\begin{proposition}
-	Đồ thị đơn giản mà có nhiều hơn một đỉnh thì có hai đỉnh với bậc bằng nhau.
-	\begin{proof}
-		Trong đồ thị với $n$ đỉnh, bậc của các đỉnh nhận giá trị trong tập $\left\{0,1,2,3,\ldots,n-1\right\}$. Tuy nhiên, giá trị $0$ và $n-1$ sẽ không xuất hiện cùng một lúc vì đỉnh có bậc $n-1$ sẽ kề với mọi đỉnh, đỉnh có bậc $0$ là cô lập, 2 đỉnh như trên không thể cùng xuất hiện trong một đồ thị. Do đó, số giá trị bậc các đỉnh của $G$ luôn bé hơn $n$, theo nguyên líDirichlet, mệnh đề được chứng minh.
-	\end{proof}
-\end{proposition}
-\begin{proposition}
-	Nếu $G$ là đồ thị đơn giản với $n$ đỉnh và $\delta(G) \ge (n-1)/2$ thì $G$ liên thông.
-	\begin{proof}
-		Lấy 2 đỉnh $u,v \in V(G)$. Giả sử $u,v$ không kề nhau. Vì $\delta(G) \ge (n-1)/2$, sẽ có ít nhất $n-1$ cạnh để nối $u$ hoặc $v$ tới các đỉnh khác. Tuy nhiên chỉ có $n-2$ cạnh, do đó theo nguyên lí Dirichlet, sẽ có một đỉnh nào đó kề với cả $u$ và $v$. Vậy mỗi cặp đỉnh trong $G$ đều tồn tại một đường đi giữa chúng.
-	\end{proof}
-\end{proposition}
-\begin{theorem}
-	Cho đồ thị $G$ không có khuyên. Khi đó $G$ có một đồ thị con là đồ thị hai phía với ít nhất $\abs{E(G)}/2$ cạnh
-	\begin{proof}
-		Phân hoạch tập đỉnh của $G$ thành hai tập $V_1$ và $V_2$. Lấy các cạnh $e=uv$ sao cho $u \in V_1$ và $v\in V_2$ đưa vào tập $E(H)$. Khi đó ta thu được đồ thị $H = (V_1,V_2,E(H))$ là đồ thị con 2 phía của $G$. Giả sử cạnh $v \in V(H)$ có ít hơn $\abs{E(G)}/2$ cạnh nối với nó. (tba)<++>
-	\end{proof}
-\end{theorem}
+\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}{0.4\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[label={[label distance=1pt]180:$p_1$}, vertice, fill=white] (p1) at (0,0) {};
+			\node[label={[label distance=1pt]180:$p_2$}, vertice, fill=white] (p2) at (0,2) {};
+			\node[label={[label distance=1pt]180:$c_1$}, vertice, fill=black] (c1) at (2,0) {};
+			\node[label={[label distance=1pt]000:$c_2$}, vertice, fill=black] (c2) at (4,0) {};
+			\node[label={[label distance=1pt]000:$c_3$}, vertice, fill=black] (c3) at (3,2) {};
+			\path[draw=black] (p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}[m]{0.05\textwidth}
+		$\implies$
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[label={[label distance=1pt]270:$(c_1,p_1)$}, vertice] (c1p1) at (0,0) {};
+			\node[label={[label distance=1pt]090:$(c_1,p_2)$}, vertice] (c1p2) at (0,2) {};
+			\node[label={[label distance=1pt]270:$(c_2,p_1)$}, vertice] (c2p1) at (2,0) {};
+			\node[label={[label distance=1pt]090:$(c_2,p_2)$}, vertice] (c2p2) at (2,2) {};
+			\node[label={[label distance=1pt]270:$(c_3,p_1)$}, vertice] (c3p1) at (4,0) {};
+			\node[label={[label distance=1pt]090:$(c_3,p_2)$}, vertice] (c3p2) at (4,2) {};
+			\path[draw=black]
+				(c1p2)--(c2p1)--(c3p2)--(c1p1)--(c2p2)--(c3p1)--(c1p2);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+\end{center}
+\caption{Tích tensor $P_2 \cdot C_3$}
+\label{fig:tich_tensor_p2_c3}
+\end{figure}
+
+\begin{definition}
+	[tích strong] Tích strong của $G$, kí hiệu $G = G_1 \circledast G_2$, được định nghĩa $G_1 \circledast G_2 = (G_1 \times G_2) \cup (G_1 \cdot G_2)$.
+\end{definition}
+
+\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}{0.4\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[label={[label distance=1pt]180:$p_1$}, vertice, fill=white] (p1) at (0,0) {};
+			\node[label={[label distance=1pt]180:$p_2$}, vertice, fill=white] (p2) at (0,2) {};
+			\node[label={[label distance=1pt]180:$c_1$}, vertice, fill=black] (c1) at (2,0) {};
+			\node[label={[label distance=1pt]000:$c_2$}, vertice, fill=black] (c2) at (4,0) {};
+			\node[label={[label distance=1pt]000:$c_3$}, vertice, fill=black] (c3) at (3,2) {};
+			\path[draw=black] (p1)--(p2)(c1)--(c2)--(c3)--(c1);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}[m]{0.05\textwidth}
+		$\implies$
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+		\begin{tikzpicture}[thick]
+			\node[label={[label distance=1pt]270:$(c_1,p_1)$}, vertice] (c1p1) at (0,0) {};
+			\node[label={[label distance=1pt]090:$(c_1,p_2)$}, vertice] (c1p2) at (0,2) {};
+			\node[label={[label distance=1pt]270:$(c_2,p_1)$}, vertice] (c2p1) at (2,0) {};
+			\node[label={[label distance=1pt]090:$(c_2,p_2)$}, vertice] (c2p2) at (2,2) {};
+			\node[label={[label distance=1pt]270:$(c_3,p_1)$}, vertice] (c3p1) at (4,0) {};
+			\node[label={[label distance=1pt]090:$(c_3,p_2)$}, vertice] (c3p2) at (4,2) {};
+			\path[draw=black]
+				(c1p2)--(c2p1)--(c3p2)--(c1p1)--(c2p2)--(c3p1)--(c1p2);
+			\path[draw=black] 
+				(c1p1)--(c2p1)--(c3p1) to[in =  20,out=160] (c1p1)
+				(c1p2)--(c2p2)--(c3p2) to[out=-160,in =-20] (c1p2)
+				(c3p1)--(c3p2)
+				(c2p1)--(c2p2)
+				(c1p1)--(c1p2);
+		\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+\end{center}
+\caption{Tích strong $P_2 \cdot C_3$}
+\label{fig:tich_strong_p2_c3}
+\end{figure}
+%
+%
+% \section{Một số định lý, mệnh đề}
+% \label{sec:mot_so_dinh_ly_menh_de}
+% \input{parts/theorems.tex}
 \end{document}
