@@ -1,3 +1,4 @@
+\section{Một số định lý}
 \begin{theorem}
 	\label{theo:tong_bac_cua_dinh} Cho một đồ thị $G$, tổng bậc của các đỉnh trong $G$ bằng 2 lần số cạnh của $G$.
 	\begin{equation*}
@@ -7,14 +8,24 @@
 		Với mỗi $e \in E(G)$, $e$ có hai đầu mút, làm tăng bậc của $2$ đỉnh đầu mút của nó lên 1 và do đó tăng tổng số bậc của đồ thị lên 2.
 	\end{proof}
 \end{theorem}
-\begin{corolarry}
+\begin{corollary}
 	\label{coro:number_of_odd_degree_vertices_is_even}
 Số đỉnh bậc lẻ trong một đồ thị luôn là số chẵn. Không có đồ thị chính quy nào có bậc lẻ.
-\end{corolarry}
-\begin{corolarry}
+\end{corollary}
+\begin{corollary}
 	Đồ thị $k$ -- chính quy với $n$ đỉnh có $nk/2$ cạnh.
-\end{corolarry}
+\end{corollary}
 
+\begin{theorem}
+	\label{theo:sub_bigraph}
+	Cho đồ thị $G$ không có khuyên. Khi đó $G$ có một đồ thị con là đồ thị hai phía với ít nhất $\abs{E(G)}/2$ cạnh
+	\begin{proof}
+		Phân hoạch tập đỉnh của $G$ thành hai tập $V_1$ và $V_2$. Lấy các cạnh $e=uv$ sao cho $u \in V_1$ và $v\in V_2$ đưa vào tập $E(H)$. Khi đó ta thu được đồ thị $H = (V_1,V_2,E(H))$ là đồ thị con 2 phía của $G$. Với mọi đỉnh $v$ có bậc $a$ trong $H$ và bậc $b$ trong $G$ mà $a < b/2$, nếu $v \in V_1$ thì ta chuyển $v$ sang $V_2$ và ngược lại. Khi đó ta thu được đồ thị mới $H'$ thỏa mãn mệnh đề trên. Lưu ý rằng không nhất thiết phải chuyển mọi đỉnh $v$ như trên mà chỉ cần chuyển tới khi thu được đồ thị cần tìm.
+	\end{proof}
+\end{theorem}
+\input{figures/sub_bipartgraph.tex}
+
+\section{Một số mệnh đề}
 \begin{proposition}
 	\label{prop:number_of_n_vertice_graph} Số đồ thị đơn giản với tập đỉnh có $n$ phần tử là $2^{C_n^2}$	
 	\begin{proof}
@@ -41,59 +52,4 @@ Số đỉnh bậc lẻ trong một đồ thị luôn là số chẵn. Không c�
 		Lấy 2 đỉnh $u,v \in V(G)$. Giả sử $u,v$ không kề nhau. Vì $\delta(G) \ge (n-1)/2$, sẽ có ít nhất $n-1$ cạnh để nối $u$ hoặc $v$ tới các đỉnh khác. Tuy nhiên chỉ có $n-2$ cạnh, do đó theo nguyên lí Dirichlet, sẽ có một đỉnh nào đó kề với cả $u$ và $v$. Vậy mỗi cặp đỉnh trong $G$ đều tồn tại một đường đi giữa chúng.
 	\end{proof}
 \end{proposition}
-\begin{theorem}
-	\label{theo:sub_bigraph}
-	Cho đồ thị $G$ không có khuyên. Khi đó $G$ có một đồ thị con là đồ thị hai phía với ít nhất $\abs{E(G)}/2$ cạnh
-	\begin{proof}
-		Phân hoạch tập đỉnh của $G$ thành hai tập $V_1$ và $V_2$. Lấy các cạnh $e=uv$ sao cho $u \in V_1$ và $v\in V_2$ đưa vào tập $E(H)$. Khi đó ta thu được đồ thị $H = (V_1,V_2,E(H))$ là đồ thị con 2 phía của $G$. Với mọi đỉnh $v$ có bậc $a$ trong $H$ và bậc $b$ trong $G$ mà $a < b/2$, nếu $v \in V_1$ thì ta chuyển $v$ sang $V_2$ và ngược lại. Khi đó ta thu được đồ thị mới $H'$ thỏa mãn mệnh đề trên. Lưu ý rằng không nhất thiết phải chuyển mọi đỉnh $v$ như trên mà chỉ cần chuyển tới khi thu được đồ thị cần tìm.
-	\end{proof}
-\end{theorem}
-
-\begin{figure}[htpb]
-	\begin{center}
-		\begin{minipage}[b]{0.3\textwidth}
-		\begin{center}
-		\begin{tikzpicture}[thick]
-			\node[vertice, label={225:$v_1$}] (v1) at ( 0,0) {};	
-			\node[vertice, label={-45:$v_2$}] (v2) at ( 1,0) {};	
-			\node[vertice, label={360:$v_3$}] (v3) at ( 2,1) {};	
-			\node[vertice, label={045:$v_4$}] (v4) at ( 1,2) {};	
-			\node[vertice, label={135:$v_5$}] (v5) at ( 0,2) {};	
-			\node[vertice, label={180:$v_6$}] (v6) at (-1,1) {};	
-			\path[draw=black] (v1)--(v2)--(v3)--(v4)--(v5)--(v6)--(v1)--(v4)(v1)--(v3);
-		\end{tikzpicture}\\$G$
-		\end{center}
-		\end{minipage}
-		\begin{minipage}[b]{0.3\textwidth}
-		\begin{center}
-		\begin{tikzpicture}[thick]
-			\node[vertice, label={-90:$v_1$}, fill=white] (v1) at (0,0) {};	
-			\node[vertice, label={-90:$v_2$}, fill=white] (v2) at (1,0) {};	
-			\node[vertice, label={-90:$v_3$}, fill=white] (v3) at (2,0) {};	
-			\node[vertice, label={090:$v_4$}] (v4) at (0,2) {};	
-			\node[vertice, label={090:$v_5$}] (v5) at (1,2) {};	
-			\node[vertice, label={090:$v_6$}] (v6) at (2,2) {};	
-			\path[draw=black] (v1)(v2)(v3)--(v4)(v5)(v6)--(v1)--(v4)(v1)(v3);
-		\end{tikzpicture}\\$H$
-		\end{center}
-		\end{minipage}
-		\begin{minipage}[b]{0.3\textwidth}
-		\begin{center}
-		Chuyển cạnh $v_5$ sang phía còn lại:
-		\begin{tikzpicture}[thick]
-			\node[vertice, label={-90:$v_1$}, fill=white] (v1) at (0,0) {};	
-			\node[vertice, label={-90:$v_2$}, fill=white] (v2) at (1,0) {};	
-			\node[vertice, label={-90:$v_3$}, fill=white] (v3) at (2,0) {};	
-			\node[vertice, label={-90:$v_5$}, fill=white] (v5) at (3,0) {};	
-			\node[vertice, label={090:$v_4$}] (v4) at (1,2) {};	
-			\node[vertice, label={090:$v_6$}] (v6) at (2,2) {};	
-			\path[draw=black] (v1)(v2)(v3)--(v4)--(v5)--(v6)--(v1)--(v4)(v1)(v3);
-		\end{tikzpicture}\\$H'$
-		\end{center}
-		\end{minipage}
-	\end{center}
-	\caption{Minh họa cho định lý \ref{theo:sub_bigraph}}
-	\label{fig:minh_hoa_cho_dinh_ly_sub_bigraph}
-\end{figure}
-
 

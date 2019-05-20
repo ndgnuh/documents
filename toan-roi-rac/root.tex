@@ -1,53 +1,60 @@
-\documentclass[14pt]{extarticle}
-\usepackage[vietnamese]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage[top=2cm,left=3cm,right=2cm,bottom=2cm,a4paper]{geometry}
-\usepackage{tikz}
-\usepackage{parskip}
-\usepackage{mathtools}
-
-\usetikzlibrary{arrows}
-\tikzstyle{vertice}=[circle, draw=black, fill=black, inner sep=1mm]
-\setlength{\parindent}{0pt}
-\linespread{1.15}
-
-\newtheorem{definition}{Định nghĩa}[section]
-\newtheorem{example}{Ví dụ}[section]
-\newtheorem{theorem}{Định lý}[section]
-\newtheorem{lemma}{Bổ đề}[section]
-\newtheorem{proposition}{Mệnh đề}[section]
-\newtheorem{corolarry}{Hệ quả}[section]
+\input{header.tex}
 
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\everymath{\displaystyle}
+\renewcommand{\qedsymbol}{$\blacksquare$}
 
 \begin{document}
-\tableofcontents\pagebreak
+\pagenumbering{roman}\pagestyle{plain}
+\pagestyle{fancy}
+\lhead{\it Cơ bản lý thuyết đồ thị}
+\begin{titlepage}
+	\begin{minipage}[c]{4em}
+		\includegraphics[width=3em]{resources/bk.jpg}
+	\end{minipage}
+	\begin{minipage}[l]{\textwidth - 4em}
+		{\Huge Trường Đại học Bách khoa Hà Nội\par}
+		{\large Viện Toán ứng dụng và Tin học}
+	\end{minipage}
+	\vfill
+	\vfill
+	\begin{center}
+		{\Large Tài liệu toán rời rạc}\par
+		{\LARGE Một số khái niệm cơ bản trong lý thuyết đồ thị}\par
+		\vfill
+		{\large
+			\begin{tabular}{rl}
+				{ Giảng viên hướng dẫn}:&TS. Lê Chí Ngọc\\
+				{ Sinh viên thực hiện:}& Nguyễn Đức Hùng\\
+				{ Lớp học:} & TN Toán -- tin K62
+			\end{tabular}
+		}
+		\vfill
+		{\large Hà Nội, tháng 5 năm 2019}
+	\end{center}
+\end{titlepage}
+\tableofcontents
 
-% \hspace{1cm}\vfill
-% \begin{center}
-% 	\textit{Trong bài viết, những định nghĩa, khái niệm, hoặc có chung biểu diễn tiếng Việt với nhau, hoặc chưa có từ tiếng Việt tương ứng, sẽ được giữ nguyên gốc tiếng Anh.}
-% \end{center}
-% \vfill
-% \pagebreak
-
-\section{Đồ thị \& một số khái niệm cơ bản}
+\chapter{Một số khái niệm cơ bản}
+\section{Đồ thị}
+\pagenumbering{arabic}   
 \input{parts/basic-definition.tex}
 
-\section{Ma trận biểu diễn \& đẳng cấu đồ thị}
+\section{Đường đi và chu trình}
+\input{parts/path-and-cycle.tex}
+
+\section{Biểu diễn đồ thị bằng ma trận}
 \input{parts/ma-tran-bieu-dien.tex}
 
-\section{Đường đi \& chu trình}
-\input{parts/path-and-cycle.tex}
+\section{Đẳng cấu đồ thị}
+\input{parts/dang-cau.tex}
 
 \section{Một số phép toán trên đồ thị}
 \label{sec:mot_so_phep_toan_tren_do_thi}
 \input{parts/operators.tex}
 
-\section{Một số định lý \& mệnh đề}
+\chapter{Các tính chất}
 \label{sec:mot_so_dinh_ly_menh_de}
 \input{parts/theorems.tex}
+
 \end{document}
