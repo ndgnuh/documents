@@ -1,5 +1,13 @@
 \input{header.tex}
 
+\usepackage[backend=bibtex]{biblatex}
+\usepackage[utf8]{vietnam}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\bibliography{uni}
+\renewcommand{\bibname}{Danh mục tài liệu tham khảo}
+\nocite{*}
+
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 \everymath{\displaystyle}
 \renewcommand{\qedsymbol}{$\blacksquare$}
@@ -57,4 +65,6 @@
 \label{sec:mot_so_dinh_ly_menh_de}
 \input{parts/theorems.tex}
 
+
+\printbibliography[heading=bibintoc,title={Danh mục tài liệu tham khảo}]
 \end{document}
