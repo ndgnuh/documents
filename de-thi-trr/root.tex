@@ -1,0 +1,121 @@
+\input{template/common1.tex}
+
+\newcounter{phan}
+\setcounter{phan}{1}
+\newcounter{cau}[phan]
+\setcounter{cau}{0}
+
+% \let\paragraph\cau
+\newcommand{\cau}[1]{
+	\paragraph{\sffamily Câu \arabic{cau}:}
+	\addcontentsline{toc}{subsection}{Câu \arabic{cau}}
+	\stepcounter{cau}
+	#1}
+\newcommand{\note}[1]{
+	\section*{\sffamily #1}
+	\addcontentsline{toc}{section}{#1}
+}
+\newcommand{\phan}[0]{
+	\section*{\sffamily Phần \arabic{phan}:}
+	\addcontentsline{toc}{section}{Phần \arabic{phan}}
+	\stepcounter{phan}
+	\setcounter{cau}{0}
+	}
+\newcommand{\nph}{\textit{NP -- khó}}
+\newcommand{\npe}{\textit{NP -- dễ}}
+\newcommand{\np}{\textit{NP}}
+\newcommand{\npc}{\textit{NPC}}
+\newcommand{\nptg}{\textit{NP -- trung gian}}
+\newcommand{\p}{\textit{P}}
+\newcommand{\penp}{$P = NP$}
+
+\begin{document}
+% \tableofcontents
+\begin{center}
+	{\bfseries\sffamily\huge Đề thi toán rời rạc?}\par
+	{\sffamily\LaTeX\ by ndgnuh $\langle$github.com/ndgnuh$\rangle$}
+\end{center}
+
+\note{Hướng dẫn làm bài}
+Lấy kết quả ở câu 0, làm đề tương ứng trong mỗi phần. Ví dụ kết quả là $5127463$ thì phần 1 làm câu 5, phần 2 câu 1, phần 3 câu 2, \ldots
+
+\setcounter{cau}{-1}
+\cau{Với mã đề $n$ bạn nhận được, tìm hoán vị thứ $n$ trong số các hoạn vị của $7$ số tự nhiên đầu tiên (được sắp xếp theo thứ tự từ điển)}
+
+\note{Chú ý}
+Mọi đồ thị đề cập đến là vô hướng.
+
+\phan
+\cau{Mô tả khái niệm phân lớp \nph\ và \npe}
+\cau{Mô tả khái niệm phép dẫn với thời gian đa thức, phân lớp \npc, ý nghĩa của phân lớp \npc\ với giả thuyết \penp}
+\cau{Mô tả khái niệm bài toán tính toán và các dạng của bài toán tính toán}
+\cau{Mô tả khái niệm máy Turing, định đề Church Turing và ý nghĩa của định đề này}
+\cau{Mô tả khái niệm phân lớp \p, \np, và phân lớp \nptg}
+\cau{Mô tả và nêu ý nghĩa của giả thuyết độ phức tạp mũ}
+\cau{Mô tả khái niệm máy Turing đa định}
+
+% phan 2
+\phan
+\cau{Sắp xếp nhẫu nhiên bộ bài tú lơ khơ 52 lá, tìm xác suất để các quân cùng chất được xếp kề nhau}
+\cau{Có bao nhiêu cách sắp xếp 10 người đàn ông và 5 người phụ nữ trên một bàn tròn sao cho xen kẽ cứ 2 người đàn ông lại đến 1 người phụ nữ}
+\cau{Huấn luyện viên có một danh sách gồm 15 cầu thủ có thể chơi phòng ngự hoặc tần công, trong đó có 5 cầu thủ chỉ có thể chơi tần công và 8 cầu thủ chỉ có thể chơi phòng ngự. Hỏi huấn luyện viên có bao nhiêu cách để chọn ra 10 cầu thủ trong đó có 7 cầu thủ có thể chơi phòng ngự.}
+\cau{Tìm số nghiệm nguyên của phương trình $x_1 + x_2 + x_3 + x_4 = 30$ thỏa mãn $x_1 \ge 2,\,x_2\ge 0,\,x_3\ge -5,\, x_4\ge 8$.}
+\cau{Có bao nhiêu số tự nhiên lẻ có 7 chữ số khác nhau sao cho chữ số 5 và chữ số 6 không đứng cạnh nhau}
+\cau{Có bao nhiêu cách chọn ra 3 số tự nhiên từ các số từ 1 đến 20 sao cho không có hai số tự nhiên liên tiếp nhau được chọn}
+\cau{Có bao nhiêu cách để xếp 20 sinh viên vào 5 hàng ghế, mỗi hàng 4 ghế sao cho có 2 sinh viên định trước không ngồi cùng hàng ghế}
+
+% phan 3
+\phan
+\cau{Một kì thủ có 11 tuần để chuẩn bị thi đấu cho giải cờ quyết định chơi ít nhất 1 ván một ngày. Để tránh mệt mỏi, anh ta quyết định không chơi 12 ván trong 7 ngày liên tiếp. Chứng minh rằng tồn tại một dãy ngày kế tiếp nhau anh ta chơi đúng 21 ván cờ.}
+\cau{Chứng minh rằng trong 101 số tự nhiên bất kì chọn ra từ 200 số tự nhiên liên tiếp đâu tiên luôn tìm được hai số là bội của nhau.}
+\cau{Chứng minh rằng trong một dãy gồm $n^2 + 1$ số thực luôn có thể trích ra được một dãy con (không nhất thiết gồm các số liên tiếp nhau) gồm $n+1$ số không giảm hoặc một dãy con gồm $n+1$ số không tăng.}
+\cau{Cho 10 người có độ tuổi từ 1 đến 60. Chứng minh rằng ta luôn có thể tìm được trong số này hai nhóm người (không giao nhau) sao cho tổng tuổi của mọi người trong hai nhóm là bằng nhau.}
+\cau{Cho $n$ điểm trên mặt phẳng được tô hai màu xanh và đỏ sao cho trên đoạn thẳng nối hai điểm cùng màu bất kì luôn có một điểm khác màu. Chứng minh rằng $n$ điểm này thẳng hàng.}
+\cau{Cho $n$ điểm trên mặt phẳng không đồng thời thẳng hàng. Chứng minh rằng luôn tồn tại một đường đi qua đúng 2 điểm.}
+\cau{Cho $n$ điểm xanh và $n$ điểm đỏ trên mặt phẳng sao cho không có 3 điểm nào thẳng hàng. Chỉ ra rằng ta có thể kẻ $n$ đoạn thẳng nối $n$ điểm xanh với $n$ điểm đỏ sao cho hai đầu mút của một đoạn thẳng bất kì là khác màu, mỗi điểm là đầu mút của đúng một đoạn thẳng và hai đoạn thẳng bất kì không cắt nhau.}
+
+\phan % phần 4
+\cau{Sơn bàn cờ $1\times n$ bằng ba màu xanh, đỏ và trắng sao cho không có hai ô nào đó kề nhau. Tìm công thức truy hồi cho $h_n$ là số cách tô màu. Giải công thức truy hồi đó.}
+\cau{Gọi $h_n$ là số cách lấy ra $n$ quả gồm táo, cam, chuối và lê sao cho táo là số chẵn, có không quá 2 quả cam, không quá 1 quả lê và số chuối là bội của 3. Tìm hàm sinh cho dãy $\left\{h_n\right\}$ và tìm không thức tường minh cho $h_n$.}
+\cau{Gọi $a_n$ là số chuỗi tam phân (chuỗi chỉ gồm các kí tự \texttt{'0'}, \texttt{'1'}, \texttt{'2'}) độ dài $n$ không chứa các chuỗi con \texttt{'00'}, \texttt{'11'}, \texttt{'01'}, \texttt{'10'}. Tìm công thức truy hồi cho $a_n$, giải công thức truy hồi đó.}
+\cau{Gọi $h_n$ là số cách phủ một bàn cờ $1\times n$ bằng các hình kích thức $1\times 1$ và $1 \times 2$ sao cho không có hai hình $1 \times 2$ nào đặt cạnh nhau. Tìm công thức truy hồi cho $h_n$.}
+\cau{Gọi $a_n$ là số chuỗi tam phân độ dài $n$ không chứa các chuỗi con \texttt{'00'}, \texttt{'11'}. Tìm công thức truy hồi cho $a_n$ và giải công thức truy hồi đó.}
+\cau{Gọi $h_n$ là số cách sơn bàn cờ $1\times n$ bằng tồn màu xanh, đỏ, trắng và vàng sao cho số ô đỏ và số ô trắng đều là số lẻ. Xác định hàm sinh mũ cho dãy $\left\{h_n\right\}$ và tìm công thức tường minh cho $h_n$.}
+\cau{Gọi $h_n$ là số cách sơn bàn cờ $1\times n$ bằng tồn màu xanh, đỏ, trắng và vàng sao cho số ô đỏ và số ô trắng đều là số chẵn. Xác định hàm sinh mũ cho dãy $\left\{h_n\right\}$ và tìm công thức tường minh cho $h_n$.}
+
+\phan % phan 5
+\cau{Chứng minh rằng một đồ thị là liên thông khi và chỉ khi với mọi phân hoạch tập đỉnh của nó thành hai tập khác rỗng, luôn tồn tại một cạnh sao cho hai đầu mút thuộc về hai phần của phân hoạch.}
+\cau{Cho $G$ là đơn đồ thị không chứa đỉnh cô lập. Chứng minh rằng $G$ là đầy đủ khi và chỉ khi $G$ không chứa đồ thị con cảm sinh có đúng hai cạnh.}
+\cau{Trong một lớp học có 9 sinh viên, mỗi sinh viên gửi thư cho 3 người bạn của mình. Hỏi có thể mỗi sinh viên đều nhận được thư từ 3 người bạn mà mình đã gửi thư hay không?}
+\cau{Chứng minh rằng đồ thị $G$ là hai phía khi và chỉ khi mọi đồ thị con $H$ của $G$ đều chứa một tập độc lập chứa ít nhất một nửa số đỉnh của $V(H)$.}
+\cau{Chứng minh rằng đơn đồ thị liên thông $G$ là đồ thị hai phía đầy đủ khi và chỉ khi $G$ không chứa $P_4$ hay $C_3$ như đồ thị con cảm sinh. \footnote{Chỗ này $P_4$ với $C_3$ trong đề gốc nhìn không rõ lắm}}
+\cau{Cho $G$ là đơn đồ thị liên thông không chứa $P_4$ hay $C_4$ như đồ thị con cảm sinh. Chứng minh rằng $G$ có một đỉnh kề với tất cả các đỉnh còn lại.}
+\cau{Cho $G$ là đồ thị có tất cả các đỉnh đều là đỉnh bậc chẵn. Chứng minh rằng $G$ không có cạnh cầu.}
+
+\phan % phần 6
+\cau{Chứng minh rằng một đồ thị $n$ đỉnh, $m$ cạnh sẽ chứa ít nhất là $m-n+1$ chu trình}
+\cau{Cho $G$ là đồ thị đường kính $d$ chứng minh rằng $G$ chứa một tập độc lập có lực lượng $\ceil{\frac{1+d}{2}}$}
+\cau{Trong các cây có $n$ đỉnh, tìm cây chứa tập độc lập có lực lượng lớn nhất.}
+\cau{Chứng minh rằng đơn đồ thị liên thông là đường đi khi và chỉ khi nó chứa đúng hai đỉnh không là đỉnh khớp.}
+\cau{Chứng minh rằng một cạnh của đồ thị liên thông $G$ là cạnh cầu khi và chỉ khi nó thuộc về tất cả các cây khung của $G$.}
+\cau{Chứng minh rằng đồ thị liên thông $n$ đỉnh $G$ có đúng một chu trình khi và chỉ khi nó có đúng $n$ cạnh.}
+\cau{Chứng minh rằng một đồ thị có số cạnh ít hơn số đỉnh sẽ chứa ít nhất một thành phần liên thông là một cây.}
+
+\phan % phần 7
+\cau{Chứng minh rằng đồ thị hai phía $G$ liên thông là đồ thị Euler khi và chỉ khi nó có số chẵn cạnh}
+\cau{Chứng minh rằng mọi đồ thị phẳng đều chứa một đỉnh có bậc không quá 5.}
+\cau{Chứng minh rằng đồ thị phẳng có không quá 11 đỉnh sẽ chứa một đỉnh có bậc không quá 4.}
+\cau{Chứng minh rằng đồ thị phẳng hai phía sẽ chứa một đỉnh có bậc không quá 3.}
+\cau{Tìm điều kiện cần và đủ của $r$ để $K_r$ \footnote{Chỗ này cũng không rõ là $K_{r,r}$ hay $K_r$} là đồ thị Hamilton.}
+\cau{Cho đồ thị $G$ có $2m$ đỉnh bậc lẻ. Chứng minh rằng một chu trình chứa tất cả các cạnh của đồ thị sẽ chứa $m$ cạnh lặp lại hơn một lần.}
+\cau{Cho đơn đồ thị $G$ có ít nhất 11 đỉnh, chứng minh rằng $G$ hoặc đồ thị bù của nó không phải là đồ thị phẳng.}
+
+\phan % phần 8
+\cau{Mô tả khái niệm tập hợp đếm được và tập hợp không đếm được.}
+\cau{Có bao nhiêu số chẵn có 4 chữ số khác nhau lập từ các chữ số 1, 2, 3, 4 và 5?}
+\cau{Chứng minh rằng trong một nhóm người luôn tìm được hai người có số người quen là bằng nhau.}
+\cau{Cho dãy $\left\{h_n = n^3\right\}$, chứng minh rằng dãy thỏa mãn công thức truy hồi $h_n = h_{n-1} + 3n^2 -3n + 1$.}
+\cau{Giả sử đồ thị $G$ chỉ có hai đỉnh $u,v$ là hai đỉnh bậc lẻ. Chứng minh rằng tồn tại đường đi nối hai đỉnh này.}
+\cau{Chứng minh rằng đồ thị $n$ đỉnh có ít nhất $n$ cạnh sẽ có ít nhất một chu trình.}
+\cau{Tìm điều kiện cần và đủ để có đồ thị hai phía đầy đủ $K_{m,n}$ là đồ thị Euler.}
+\end{document}

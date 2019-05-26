@@ -1,0 +1,32 @@
+\documentclass[12pt, twoside]{report}
+\usepackage[utf8]{vietnam}
+
+%
+% fancy sectioning
+%
+\usepackage{titlesec}
+\newlength\titleindent
+\setlength\titleindent{2cm}
+\titleformat{\section}
+	{\normalfont\Large\bfseries}{\llap{\parbox{\titleindent}{\thesection\hfill}}}{0em}{}
+
+
+%
+% Page setup
+%
+\usepackage[a4paper]{geometry}
+\newgeometry{
+	margin = 1in,
+	bindingoffset = 1in
+}
+
+%
+% fancy headers
+%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}
+\fancyhead[RE, LO]{Chương \thechapter}
+\fancyhead[RO, LE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
