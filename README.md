@@ -19,4 +19,4 @@ pdflatex root.tex
 ```
 
 ## Giấy phép
-Giấy phép GPL-3 hoặc hơn
+Giấy phép GPL-3.0 hoặc hơn
