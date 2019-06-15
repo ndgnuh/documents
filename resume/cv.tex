@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[T1]{fontenc}
+\usepackage[usefilenames,% Important for XeLaTeX
+RMstyle=Light,
+SSstyle=Light,
+TTstyle=Light,
+DefaultFeatures={Ligatures=Common}
+]{plex-otf} %
+\setlength{\parindent}{0pt}
+
+
+\titleformat{\section}
+{\vspace{2em}\rmfamily\LARGE}
+{}
+{1em}
+{}[\titlerule]
+\titleformat{\subsection}
+{\bfseries\large}
+{$\bullet$}
+{0.5em}
+{}
+\thispagestyle{empty}
+
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\LARGE\theauthor}
+    \vspace{0.25em}
+
+    {\sffamily ndgnuh@protonmail.com -- https://github.com/ndgnuh}
+  \end{center}
+}
+
+\newcommand{\entry}[4]{
+  \begin{minipage}[t]{0.25\textwidth}
+    \hfill #1 
+  \end{minipage}
+  \hfill\vline\hfill
+  \begin{minipage}[t]{0.7\textwidth}
+    {\large\bfseries #2}\\
+    {\it #3}\\#4
+  \end{minipage}
+  \par\vspace{0.5em}
+}
+
+\begin{document}
+\title{Resume}
+\author{\sffamily Nguyễn Đức Hùng}
+\maketitle
+
+\section{NGHỀ NGHIỆP}
+\entry{6/2018 -- 9/2018}{Thực tập viên -- lập trình viên}{CÔNG TY CỔ PHẦN TRUYỀN THÔNG KHỞI ĐẦU MỚI}{
+  Viết mã nguồn cho ứng dụng điện thoại thông minh
+}
+\entry{3/2019 -- hiện tại}{Freelance -- cộng tác viên}{MỘT SỐ DỰ ÁN MÃ NGUỒN MỞ}{
+  \texttt{ibus-bamboo} -- tạo tài liệu và gói cài đặt cho một số distro linux\\
+  \texttt{awesomewm} -- đóng góp tính năng
+}
+
+\section{KỸ NĂNG}
+\subsection{Làm việc với máy tính}
+\begin{itemize}
+  \item Ngôn ngữ lập trình: \textit{python, c, lua, (một số) shellscript.}
+  \item Ngôn ngữ đánh dấu: HTML, Markdown, Latex.
+  \item Có khả năng làm việc với cả môi trường GUI và CLI.
+  \item Có khả năng làm việc với môi trường GNU/Linux.
+\end{itemize}
+
+\subsection{ngôn ngữ}%
+\label{sub:ngôn_ngữ}
+
+\section{HỌC VẤN}%
+\entry{8/2017 -- Hiện tại}{Sinh viên năm 2 -- ngành Toán tin }{Đại học Bách khoa Hà Nội}
+
+
+\end{document}
