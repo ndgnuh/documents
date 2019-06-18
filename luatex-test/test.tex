@@ -1,6 +1,7 @@
 % this document is meant to compile with luatex
 \documentclass{article}
 \usepackage[a4paper,margin=1in]{geometry}
+\usepackage{lipsum}
 
 
 \directlua{function fib(n)
@@ -8,12 +9,9 @@
 	if (n == 1) then return 1 end
 	return fib(n-1) + fib(n-2)
 end}
-\newcommand{\lo}[1]{\directlua(tex.sprint(#1))}
 
 \begin{document}
 	$\pi = \directlua{tex.sprint(math.pi)}$\par
 	$e^{10} = \directlua{tex.sprint(math.exp(10))}$\par
 	Fibonnacci number using recurrsion: $F_{10} = \directlua{tex.sprint(fib(10))}$
-	
-	Test tiếng Việt, xin chào thế giới.
 \end{document}
