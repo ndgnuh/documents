@@ -1,0 +1,119 @@
+\input{template/common1.tex}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\begin{document}
+\section{Tìm hiểu về machine learning}
+Machine Learning (ML) là một ngành con của khoa học máy tính nhằm giúp máy tính có khả năng hiểu được dữ liệu đầu vào mà không cần qua việc lập trình một cách tường tận.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|p{0.15\textwidth}|X|p{0.2\textwidth}|p{0.2\textwidth}|}
+	\hline Phân loại                   & Khái quát                                                                                                    & Bài toán                               & Thuật toán cụ thể
+	\\ \hline Supervised learning      & Có sẵn một số cặp đầu vào -- ra, mong muốn dự đoán đầu ra với đầu vào mới.                                   & Classification, {Regression}           & Linear regression, K-Nearest Neighbor
+	\\ \hline Unsupervised learning    & Sử dụng dữ liệu chưa gán nhãn và đầu ra không cụ thể, thường sử dụng để khai thác thêm thông tin từ dữ liệu. & Clustering, Dimensional reduction(TBA) & K-means clustering
+	\\ \hline Semi-supervised learning & TBA                                                                                                          & TBA                                    & TBA
+	\\ \hline Reinforcement learning   & TBA                                                                                                          & TBA                                    & TBA
+	\\ \hline
+\end{tabularx}
+
+\subsection{Linear Regression}%
+\label{sub:linear_regression}
+Least square method, xấp xỉ hàm cần tính bằng cách tối thiểu bình phương khoảng cách giữa các điểm vào -- ra $(x_i, y_i)$ đã biết.
+
+Đầu vào:
+\begin{align*}
+	\mathbf{x} = \left(\begin{array}{c}
+	x_1\\x_2\\\vdots\\x_n	
+	\end{array}\right)&& \mathbf{y} = \left(\begin{array}{c}
+	y_1\\y_2\\\vdots\\y_n	
+	\end{array}\right)&&
+	\mathbf{\Phi} = \left(\begin{array}{c}
+			\varphi_1 = \varphi_1(x_1)\\
+			\varphi_2 = \varphi_2(x_2)\\\vdots\\
+			\varphi_n = \varphi_n(x_n)	
+	\end{array}\right)&&
+\end{align*}
+
+Đầu ra: \(\mathbf{w} = (w_i)^T\)
+
+Hàm cần tối thiểu hóa:
+\begin{equation*}
+	L(\mathbf{w}) = \sum_{i=1}^n (w_i\varphi_i - y_i)^2
+\end{equation*}
+
+Tối thiểu hóa bằng đạo hàm riêng phần $\partial(L)/\partial{w_i}$ thu được nghiệm:
+\begin{equation*}
+	\mathbf{w} = \left(\Phi^T\Phi\right)^{-1}\Phi^T\mathbf{y}
+\end{equation*}
+
+
+\subsection{K-nearest neighbors}%
+\label{sub:k_nearest_neighbors}
+Thuật toán học lười, tìm $K$ những điểm dữ liệu có khoảng cách gần nhất và đoán đầu ra dựa trên những điểm đó.
+
+\subsection{K-means clustering}%
+\label{sub:k_means_clustering}
+Phân các điểm dữ liệu vào các cụm cho $\norm{x_i - m_j}$ min, với $x_i$ là điểm dữ liệu, $m_i$ là tâm mỗi cụm.
+
+Cần tìm $\mathbf{Y} = (y_{ij})$ với $y_{ij} = \begin{cases}
+	1 \quad \text{nếu $x_i \in$ cụm $j$}\\
+	0 \quad \text{nếu $x_i \notin$ cụm $j$}
+\end{cases}$ sao cho $\displaystyle \sum_{j=1}^{\text{số cụm}} y_{ij}\norm{x_i - m_k}^2$ đạt min
+\paragraph{Nếu biết trước tâm mỗi cụm}%
+\label{par:nếu_biết_trước_tâm_mỗi_cụm}``
+Gán mỗi điểm dữ liệu vào cụm có khoảng cách từ điểm đó đến tâm ngắn nhất
+
+\paragraph{Tìm tâm mỗi cụm}%
+\label{par:tìm_tâm_mỗi_cụm}
+Giải đạo hàm riêng phần theo $m_j$ của hàm mục tiêu được:
+\begin{equation*}
+	m_j = \frac{ \sum^{n}_{i=1} x_iy_{ij} }{ \sum^{n}_{i=1} y_{ij} } = \frac{\text{Tổng giá trị các điểm trong cụm $j$}}{\text{Tổng số điểm trong cụm $j$}} 
+\end{equation*}
+
+Vậy $m_j$ là điểm trung bình cộng của các điểm dữ liệu trong cùng một cụm.
+\begin{enumerate}
+	\item Chọn ngẫu nhiên một tâm cho mỗi cụm
+	\item Gán các điểm vào cụm, dựa trên khoảng cách ngắn nhất tới tâm \label{step:kmc-startloop}
+	\item Cập nhật tâm mới bằng cách lấy trung bình các điểm trong một cụm
+	\item Nếu tâm mới == tâm cũ dừng, không chuyển qua bước \ref{step:kmc-startloop}
+\end{enumerate}
+\section{Tìm hiểu về NLP}
+NLP là một lĩnh vực giao thoa giữa khoa học máy tính, trí tuệ nhân tạo và ngôn ngữ học.  
+\subsection{Một số ứng dụng}%
+\label{sub:một_số_ứng_dụng}
+\begin{itemize}
+	\item Nhận diện giọng nói
+	\item Giám sát mạng xã hội
+	\item Bot
+	\item Dịch thuật máy
+	\item Kiểm tra chính tả
+	\item Công cụ tìm kiếm
+	\item Trích rút thông tin
+	\item Quảng cáo
+\end{itemize}
+
+\subsection{Các quá trình cơ bản}%
+\label{sub:các_quá_trình_cơ_bản}
+\begin{tabularx}{\textwidth}{|p{0.2\textwidth}|X|X|}
+	\hline Quá trình & Khái quát & Note
+	\\\hline Tokenization & Chia đoạn văn bản thành những thành phần nhỏ hơn có nghĩa & Có thể có nhiều cách chia, đơn giản nhất là chia mỗi câu hoặc từ
+	\\\hline Lọc stopwords & Loại bỏ những từ không mang lại nhiều ý nghĩa trong câu & Tùy từng ngôn ngữ và use case
+	\\\hline Stemming & Đưa các từ về một loại duy nhất & Vì tiếng Việt không danh từ hóa như tiếng Anh nên bước này có thể sẽ vô nghĩa với tiếng Việt?
+	\\\hline Lemmatization & Đưa các từ về cùng một thì & Tiếng Việt không chia thì như tiếng Anh 
+	\\\hline Tagging & Nhận diện từ loại của mỗi từ.& - 
+	\\\hline Entity Recognition & Nhận diện thực thể xuất hiện trong văn bản& - 
+	\\\hline Chunking & Xếp các token thành một cụm có nghĩa & Token thu được ở bước tokenization và qua xử lý ở các quá trình trên
+	\\\hline
+\end{tabularx}
+
+\subsection{Word embedding}%
+\label{sub:word_embedding}
+
+Ngữ cảnh liên hệ mật thiết với nghĩa của từ. Một số cặp từ thường xuất hiện trong cùng một ngữ cảnh.
+
+Word2vec, đưa vào một từ, thuật toán đưa ra một vector chỉ những từ cùng ngữ cảnh.
+
+\end{document}
+
