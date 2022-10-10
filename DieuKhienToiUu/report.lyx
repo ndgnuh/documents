@@ -1,0 +1,2874 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrreprt
+\begin_preamble
+\usepackage{mlmodern}
+\usepackage[
+	a4paper,
+	top=3.5cm,
+	left=3.5cm,
+	bottom=3cm,
+	right=2cm,
+]{geometry}
+\usepackage{dutchcal}
+\end_preamble
+\options fontsize=14pt
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language vietnamese
+\language_package default
+\inputencoding utf8x
+\fontencoding T5
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert }
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\abs}[1]{\left|#1\right|}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\toto}{\rightrightarrows}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\F}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\K}{\mathbb{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\gr}{\operatorname{gr}}
+{\mathrm{gr}\,}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dom}{\operatorname{dom}}
+{\mathrm{dom}\,}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ker}{\operatorname{ker}}
+{\mathrm{ker}\,}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\im}{\operatorname{im}}
+{\mathrm{im}\,}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\g}{\mathcal{g}}
+{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\MP}{\text{mp}}
+{\text{mp}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\operatorname{rank}}
+{\mathrm{rank}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Giới thiệu
+\end_layout
+
+\begin_layout Standard
+Một trong những khái niệm cơ bản của lý thuyết điều khiển là khả năng điều
+ khiển (controllability).
+ Hệ điều khiển tuyến tính 
+\begin_inset Formula $\dot{x}=Ax+Bu,x\in\mathbb{K}^{n},A\in\mathbb{K}^{n\times n},B\in\mathbb{K}^{n\times m}$
+\end_inset
+
+, với 
+\begin_inset Formula $\mathbb{K}=\mathbb{R}$
+\end_inset
+
+ hoặc 
+\begin_inset Formula $\ensuremath{\mathbb{C}}$
+\end_inset
+
+ được gọi là điều khiển được nếu với trạng thái ban đầu bất kỳ 
+\begin_inset Formula $x\left(0\right)=x_{0}$
+\end_inset
+
+ và trạng thái cuối bất kì 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+, tồn tại 
+\begin_inset Formula $T>0$
+\end_inset
+
+ và một hàm điều khiển có thể đo được 
+\begin_inset Formula $u\left(t\right)\in\mathbb{K}^{m},0\leq t\leq T$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $x\left(T\right)=x_{1}$
+\end_inset
+
+.
+ Khi đó ta gọi cặp ma trận 
+\begin_inset Formula $\left(A,B\right)\in\mathbb{K}^{n\times n}\times\mathbb{K}^{n\times m}$
+\end_inset
+
+ là điều khiển được.
+\end_layout
+
+\begin_layout Standard
+Với cặp 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ điều khiển được, người ta tính toán khoảng cách 
+\begin_inset Formula $r_{\mathbb{K}}\left(A,B\right)$
+\end_inset
+
+ đến trạng thái không điều khiển được:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+r_{\mathbb{K}}\left(A,B\right)= & \inf\{\norm{\Delta_{1},\Delta_{2}}:\left[\Delta_{1},\Delta_{2}\right]\in\mathbb{K}^{n\times\left(n+m\right)}\nonumber \\
+ & ,\left[A,B\right]+\left[\Delta_{1},\Delta_{2}\right]\text{ là không điều khiển được\}}\label{eq:1.1}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\norm{\cdot}$
+\end_inset
+
+ biểu thị một chuẩn ma trận (matrix norm).
+ 
+\begin_inset Formula $r_{\mathbb{K}}\left(A,B\right)$
+\end_inset
+
+ cho biết cần gây nhiễu cặp ma trận 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ bao nhiêu để hủy tính điều khiển của nó.
+ 
+\end_layout
+
+\begin_layout Standard
+Vấn đề 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:1.1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ có tầm quan trọng lớn trong lý thuyết điều khiển và đã thu hút được nhiều
+ sự chú ý của các nhà nghiên cứu trong những năm gần đây.
+ Một trong những kết quả nổi tiếng nhất công thức được Eising chứng minh:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r_{\mathbb{C}}\left(A,B\right)=\inf_{\lambda\in\mathbb{C}}\sigma_{\min}\left(\left[A-\lambda IB\right]\right),\label{eq:1.2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Trong đó 
+\begin_inset Formula $\sigma_{\min}$
+\end_inset
+
+ kí hiệu giá trị kì dị nhỏ nhất của ma trận, chuẩn ma trận trong 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:1.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ là chuẩn phổ (spectral norm) hoặc chuẩn Frobenius (Frobenius norm).
+ Chứng minh của 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:1.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ dựa trên điều kiện Hautus về khả năng điều khiển:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left(A,B\right) & \in\mathbb{K}^{n\times n}\times\mathbb{K}^{n\times m}\text{ là điều khiển được}\label{eq:1.3}\\
+ & \iff\rank\left[A-\lambda i,B\right]=n,\text{ }\forall\lambda\in\mathbb{C}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Được thúc đẩy bởi sự phát triển trong lý thuyết bán kính ổn định, vấn đề
+ về tính toán khoảng cách có cấu trúc đến trạng thái không điều khiển được
+ khi cặp 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ bị nhiễu affine:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[A,B\right]\rightsquigarrow\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+D\Delta E,\text{ }\Delta\in\mathcal{D},\label{eq:1.4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Với 
+\begin_inset Formula $D\in\mathbb{K}^{n\times l},E\in\mathbb{K}^{q\times\left(n+m\right)}$
+\end_inset
+
+ là ma trận cấu trúc cho trước và 
+\begin_inset Formula $\mathcal{D}\subset\mathbb{K}^{l\times q}$
+\end_inset
+
+là lớp nhiễu cho trước.
+ Trường hợp 
+\begin_inset Formula $\mathcal{D}=\mathbb{C}^{l\times q}$
+\end_inset
+
+đã được xem xét trong một bài báo, với một số công thức về khoảng cách có
+ cấu trúc đến trạng thái không điều khiển được đã dược chứng minh cho các
+ chuẩn phổ ma trận.
+\end_layout
+
+\begin_layout Standard
+Trong báo cáo này, ta thiết lập các công thức về khoảng cách có cấu trúc
+ đến trạng thái không điều khiển được trong trường hợp tổng quát hơn, khi
+ ma trận 
+\begin_inset Formula $A$
+\end_inset
+
+ và 
+\begin_inset Formula $B$
+\end_inset
+
+ chịu nhiều nhiễu:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[A,B\right]\rightsquigarrow\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+\sum_{i=1}^{N}D_{i}\Delta_{i}E_{i},\label{eq:1.5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kĩ thuật chính là sử dụng một số dữ kiện đã biết từ lý thuyết về toán tử
+ tuyến tính đa trị trong việc biểu diễn các phương trình và đánh giá các
+ chuẩn của ma trận liên quan đến tính toán.
+\end_layout
+
+\begin_layout Standard
+Cụ thể ta có các tiến hành theo quy trình:
+\end_layout
+
+\begin_layout Itemize
+Nhớ lại một số ký hiệu và kết quả sơ bộ về toán tử tuyến tính đa giá trị
+\end_layout
+
+\begin_layout Itemize
+Giải quyết trường hợp hệ ma trận nhiễu có cấu trúc dạng 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:1.4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ và suy ra khoảng cách có cấu trúc đến trạng thái không điều khiển được.
+\end_layout
+
+\begin_layout Itemize
+Xem xét mô hình tổng quát hơn 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:1.5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ và thiết lập một số giới hạn cho khoảng cách đến trạng thái không điều
+ khiển được.
+\end_layout
+
+\begin_layout Itemize
+Minh họa kết quả bằng ví dụ
+\end_layout
+
+\begin_layout Chapter
+Cơ sở
+\end_layout
+
+\begin_layout Standard
+Trước khi vào phần này ta điểm qua một số ký hiệu.
+ Ký hiệu:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+ là trường số, có thể là 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ hoặc 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n,m,k,l,q,N$
+\end_inset
+
+ là các số nguyên dương,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbb{K}^{n\times m}$
+\end_inset
+
+ là tập các ma trận cỡ 
+\begin_inset Formula $n\times m$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{K}^{n}=\mathbb{K}^{n\times1}$
+\end_inset
+
+ là không gian véc tơ 
+\begin_inset Formula $n$
+\end_inset
+
+ chiều với chuẩn véc tơ 
+\begin_inset Formula $\norm{\cdot}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A^{*}\in\mathbb{K}^{n\times m}$
+\end_inset
+
+ là ma trận liên hợp của 
+\begin_inset Formula $A\in\mathbb{K}^{n\times m}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+Không gian 
+\begin_inset Formula $\left(\mathbb{K}^{n}\right)^{*}=\left\{ u^{*}\colon u\in\mathbb{K}^{n}\right\} $
+\end_inset
+
+ là không gian đối ngẫu của 
+\begin_inset Formula $\mathbb{K}^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\left(\mathbb{K}^{n}\right)^{*}$
+\end_inset
+
+ là không gian hàng với chuẩn đối ngẫu,
+\end_layout
+
+\begin_layout Itemize
+Với 
+\begin_inset Formula $u^{*}\in\left(\mathbb{K}^{n}\right)^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $x\in\mathbb{K}^{n}$
+\end_inset
+
+, ký hiệu 
+\begin_inset Formula $u^{*}\left(x\right)=u^{*}x$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+Với một tập 
+\begin_inset Formula $M\subset\mathbb{K}^{n}$
+\end_inset
+
+, ký hiệu 
+\begin_inset Formula $M^{\perp}=\left\{ u^{*}\in\mathbb{K}^{*}\colon u^{*}x=0\ \forall x\in M\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+Ký hiệu 
+\begin_inset Formula $\F\colon\K^{n}\toto\K^{m}$
+\end_inset
+
+ là ánh xạ đa trị.
+ Đồ thị của 
+\begin_inset Formula $\F$
+\end_inset
+
+, định nghĩa bởi 
+\begin_inset Formula 
+\begin{equation}
+\gr\F=\left\{ \left(x,y\right)\in\K^{n}\times\K^{m}\colon y\in\F\left(x\right)\right\} .\label{eq:2.1}
+\end{equation}
+
+\end_inset
+
+Nếu 
+\begin_inset Formula $\gr F$
+\end_inset
+
+ là không gian tuyến tính con của 
+\begin_inset Formula $\K^{n}\times\K^{m}$
+\end_inset
+
+ thì 
+\begin_inset Formula $\F$
+\end_inset
+
+ gọi là toán tử tuyến tính đa trị.
+ Tập xác định và nhân của 
+\begin_inset Formula $\F$
+\end_inset
+
+ là 
+\begin_inset Formula 
+\begin{align*}
+\dom\F & =\left\{ x\in\K^{n}\colon\F\left(x\right)\ne\emptyset\right\} ,\\
+\ker\F & =\left\{ x\in\dom\F\colon0\in\F\left(x\right)\right\} .
+\end{align*}
+
+\end_inset
+
+Theo định nghĩa, 
+\begin_inset Formula $\F\left(0\right)$
+\end_inset
+
+ là không gian tuyến tính con, và với 
+\begin_inset Formula $x\in\dom\F$
+\end_inset
+
+, ta có
+\begin_inset Formula 
+\begin{equation}
+y\in\F\left(x\right)\iff\F\left(x\right)=y+\F\left(0\right).\label{eq:2.2}
+\end{equation}
+
+\end_inset
+
+Cho một toán tử tuyến tính đa trị 
+\begin_inset Formula $\F\colon\K^{n}\toto\K^{m}$
+\end_inset
+
+, chuẩn véc tơ trên không gian 
+\begin_inset Formula $\K^{n}$
+\end_inset
+
+ và 
+\begin_inset Formula $\K^{m}$
+\end_inset
+
+, ta có chuẩn của 
+\begin_inset Formula $\F$
+\end_inset
+
+ định nghĩa bởi
+\begin_inset Formula 
+\begin{equation}
+\norm{\F}=\sup\left\{ \inf_{y\in\F\left(x\right)}\norm y\colon x\in\dom\F,\norm x=1\right\} .\label{eq:2.3}
+\end{equation}
+
+\end_inset
+
+Từ định nghĩa, ta có
+\begin_inset Formula 
+\[
+\inf_{y\in\F\left(x\right)}\norm y\le\norm{\F}\norm x\quad\forall x\in\dom\F,
+\]
+
+\end_inset
+
+và, nếu 
+\begin_inset Formula $\F$
+\end_inset
+
+ là đơn trị thì
+\begin_inset Formula 
+\begin{equation}
+\norm{\F\left(x\right)}\le\norm{\F}\norm x\quad\forall x\in\dom\F.\label{eq:2.4}
+\end{equation}
+
+\end_inset
+
+Nếu các chuẩn đang được xét là chuẩn Ơ cờ lít (tức là 
+\begin_inset Formula $\norm x=\sqrt{x^{*}x}$
+\end_inset
+
+) thì từ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:2.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ ta có
+\begin_inset Formula 
+\begin{equation}
+y\in\F\left(x\right),y^{*}\in\F\left(0\right)^{\perp}\implies d\left(0,\F\left(x\right)\right)\coloneqq\inf_{z\in\F\left(x\right)}\norm z=\norm y.\label{eq:2.5}
+\end{equation}
+
+\end_inset
+
+Với một toán tử đa trị 
+\begin_inset Formula $\F\colon\K^{n}\toto\K^{m}$
+\end_inset
+
+, ta có toán tử liên hợp 
+\begin_inset Formula 
+\begin{align*}
+\F^{*}\colon & \left(\K^{m}\right)^{*}\toto\left(\K^{n}\right)^{*},\\
+\F^{*}\left(v^{*}\right) & =\left\{ u^{*}\in\left(\K^{m}\right)^{*}\colon u^{*}x=v^{*}y\,\forall\left(x,y\right)\in\gr F\right\} .
+\end{align*}
+
+\end_inset
+
+ và toán tử nghịch đảo 
+\begin_inset Formula 
+\begin{align*}
+\F^{-1}\colon & \im\F\toto\K^{n},\\
+\F^{-1}\left(y\right)= & \left\{ x\in\K^{n}\colon y\in\F\left(x\right)\right\} .
+\end{align*}
+
+\end_inset
+
+Các toán tử 
+\begin_inset Formula $\F^{*}$
+\end_inset
+
+ và 
+\begin_inset Formula $\F^{-1}$
+\end_inset
+
+ cũng là tuyến tính đa trị.
+ Đồng thời, ta có các tính chất:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\F^{*}\right)^{*}=\F$
+\end_inset
+
+, đối ngẫu của đối ngẫu cũng là đối ngẫu,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\F^{*}\right)^{-1}=\left(\F^{-1}\right)^{*},$
+\end_inset
+
+ đối ngẫu của nghịch đảo là nghịch đảo của đối ngẫu, do đó có thể ký hiệu
+ là 
+\begin_inset Formula $\F^{*-1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\norm{\F}=\norm{\F^{-1}}$
+\end_inset
+
+, chuẩn của nghịch đảo bằng chuẩn của ánh xạ ban đầu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ánh xạ 
+\begin_inset Formula $\F$
+\end_inset
+
+ là toàn ánh (tức 
+\begin_inset Formula $\F\left(\K^{n}\right)=\K^{m}$
+\end_inset
+
+) khi và chỉ khi 
+\begin_inset Formula $\F$
+\end_inset
+
+ là đơn ánh, tức 
+\begin_inset Formula $\F^{*-1}\left(0\right)=\left\{ 0\right\} $
+\end_inset
+
+, hay 
+\begin_inset Formula $F^{*-1}$
+\end_inset
+
+ là đơn trị.
+ Xét 
+\begin_inset Formula $\F\colon\K^{n}\toto\K^{m}$
+\end_inset
+
+, 
+\begin_inset Formula $\g\colon\K^{m}\toto\K^{l}$
+\end_inset
+
+ là toán tử tuyến tính đa trị, toán tử 
+\begin_inset Formula $\g\F\colon\K^{n}\toto\K^{l}$
+\end_inset
+
+ được định nghĩa bởi 
+\begin_inset Formula $\g\F\left(x\right)=\g\left(\F\left(x\right)\right)$
+\end_inset
+
+ với mọi 
+\begin_inset Formula $x\in\dom\F$
+\end_inset
+
+ và cũng là tuyến tính đa trị.
+ Toán tử 
+\begin_inset Formula $\g\F$
+\end_inset
+
+ có một số tính chất:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\F\left(0\right)\subset\dom\g\implies\norm{\g\F}\le\norm g\norm F$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\im\F\subset\dom g\implies\left(\g\F\right)^{*}=\F^{*}\g^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nếu 
+\begin_inset Formula $\F$
+\end_inset
+
+ là đơn trị, 
+\begin_inset Formula $\F\left(x\right)=\F_{G}\left(x\right)=Gx$
+\end_inset
+
+, với 
+\begin_inset Formula $G\in\K^{m\times n}$
+\end_inset
+
+ và 
+\begin_inset Formula $x\in\K^{n}$
+\end_inset
+
+, thì hiển nhiên 
+\begin_inset Formula $\norm{\F_{G}}=\norm G$
+\end_inset
+
+.
+ Trong một dãy, khi làm việc với toán tử tuyến tính đa trị, ta dùng ký hiệu
+ 
+\begin_inset Formula $\F_{G}\left(x\right)=G\left(x\right)$
+\end_inset
+
+.
+ Toán tử đối ngẫu 
+\begin_inset Formula $\left(\F_{G}\right)^{*}\colon\left(\K^{m}\right)^{*}\to\left(\K^{n}\right)^{*}$
+\end_inset
+
+ cũng là đơn trị được cho bởi 
+\begin_inset Formula $\left(\F_{G}\right)^{*}\left(v^{*}\right)=v^{*}G^{*}$
+\end_inset
+
+.
+ Để đơn giản hoá vấn đề, ta đồng nhất 
+\begin_inset Formula $\left(\F_{G}\right)^{*}$
+\end_inset
+
+ với 
+\begin_inset Formula $G^{*}$
+\end_inset
+
+, tức
+\begin_inset Formula 
+\[
+\left(\F_{G}\right)^{*}\left(v^{*}\right)=G^{*}\left(v^{*}\right)=v^{*}G,\quad\forall v^{*}\in\left(\K^{m}\right)^{*}.
+\]
+
+\end_inset
+
+Chú ý: 
+\begin_inset Formula $G^{*}v$
+\end_inset
+
+ được hiểu là tích của ma trận 
+\begin_inset Formula $G^{*}\in\K^{n\times m}$
+\end_inset
+
+ với véc tơ 
+\begin_inset Formula $v\in\K^{n}$
+\end_inset
+
+ và 
+\begin_inset Formula $\left(G^{*}v\right)^{*}=G^{*}\left(v^{*}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Khoảng cách cấu trúc dưới nhiễu tuyến tính
+\end_layout
+
+\begin_layout Standard
+Giả sử cặp ma trận 
+\begin_inset Formula $\left(A,B\right)\in\K^{n\times n}\times\K^{n\times n}$
+\end_inset
+
+ là điều khiển được và có dạng affine
+\begin_inset Formula 
+\begin{align*}
+\left[A,B\right] & \leadsto\left[\widetilde{A},\widetilde{B}\right]=\left[A,B\right]+D\Delta E,
+\end{align*}
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $D\in\K^{n\times l}$
+\end_inset
+
+, 
+\begin_inset Formula $E\in\K^{q\times\left(n+m\right)}$
+\end_inset
+
+ là những ma trận cho trước và 
+\begin_inset Formula $\Delta\in\K^{l\times q}$
+\end_inset
+
+ là ma trận nhiều loạn.
+ Những ma trận cấu trúc 
+\begin_inset Formula $D$
+\end_inset
+
+ và 
+\begin_inset Formula $E$
+\end_inset
+
+ quyết định cấu trúc của nhiều loạn 
+\begin_inset Formula $D\Delta E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Cho chuẩn 
+\begin_inset Formula $\norm{\cdot}$
+\end_inset
+
+ trên 
+\begin_inset Formula $\K^{l\times q}$
+\end_inset
+
+, một khoảng cách cấu trúc để một cặp 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ không điều khiển được dưới nhiễu affine được định nghĩa bởi
+\begin_inset Formula 
+\[
+r_{\K}^{D,E}\left(A,B\right)=\inf\left\{ \norm{\Delta}\colon\Delta\in\K^{l\times q},\left[\widetilde{A},\widetilde{B}\right]=\left[A,B\right]+D\Delta E\text{ không điều khiển được}\right\} 
+\]
+
+\end_inset
+
+Nếu cặp 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ điều khiển được dưới mọi loại nhiễu thì 
+\begin_inset Formula $r_{\K}^{D,E}\left(A,B\right)=\infty$
+\end_inset
+
+.
+ Đại lượng 
+\begin_inset Formula $r_{\K}^{D,E}\left(A,B\right)$
+\end_inset
+
+ được gọi là bán kính điều khiển được có cấu trúc của hệ 
+\begin_inset Formula $\dot{x}=Ax+Bu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Định nghĩa, với mỗi 
+\begin_inset Formula $\lambda\in\mathbb{C},$
+\end_inset
+
+ ánh xạ đơn trị 
+\begin_inset Formula $W_{\lambda}\colon\K^{n+m}\to\K^{n}$
+\end_inset
+
+ bởi 
+\begin_inset Formula $W_{\lambda}z=\left[A-\lambda I,B\right]z$
+\end_inset
+
+ với mọi 
+\begin_inset Formula $z\in\K^{n+m}$
+\end_inset
+
+; và ánh xạ đa trị 
+\begin_inset Formula 
+\begin{align*}
+EW^{-1}D & \colon\K^{l}\toto\K^{q},\\
+\left(EW^{-1}D\right)\left(u\right) & =E\left(W_{\lambda}^{-1}\left(Du\right)\right),\quad\forall u\in K^{l}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+trong đó 
+\begin_inset Formula $W_{\lambda}^{-1}:\mathbb{K}^{n}\toto\mathbb{K}^{n+m}$
+\end_inset
+
+ là toán tử (đa trị) nghịch đảo của 
+\begin_inset Formula $W_{\lambda}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:3.2"
+
+\end_inset
+
+Nếu 
+\begin_inset Formula $\mathbb{K}=\mathbb{C}$
+\end_inset
+
+ thì:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\begin{align}
+r_{\mathbb{C}}^{D,E}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\mathbb{C}}\norm{EW_{\lambda}^{-1}D}}.\label{eq:3.3}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Theo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1.3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, khả năng điều khiển của 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+tương đương với thuộc tính toán tử 
+\begin_inset Formula $W_{\lambda}$
+\end_inset
+
+ toàn ánh với mọi 
+\begin_inset Formula $\lambda\in\C$
+\end_inset
+
+ hoặc tương đương 
+\begin_inset Formula $W_{\lambda}^{*-1}$
+\end_inset
+
+ là đơn trị với mọi 
+\begin_inset Formula $\lambda\in\C$
+\end_inset
+
+.
+ Giả sử cặp 
+\begin_inset Formula $\left(\tilde{A},\tilde{B}\right)$
+\end_inset
+
+với 
+\begin_inset Formula $\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+D\Delta E$
+\end_inset
+
+ là không điều khiển được, với 
+\begin_inset Formula $\Delta\in\C^{l\times q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Từ đó suy ra rằng tồn tại 
+\begin_inset Formula $\lambda_{0}\in\C$
+\end_inset
+
+ sao cho toán tử tuyến tính 
+\begin_inset Formula $g_{\lambda_{0},\Delta}:=W_{\lambda_{0}}+D\Delta E:\C^{n+m}\to\C^{n}$
+\end_inset
+
+là không toàn ánh.
+ 
+\end_layout
+
+\begin_layout Proof
+Do đó, tồn tại 
+\begin_inset Formula $y_{0}^{*}\in\left(\C^{n}\right)^{*},y_{0}^{*}\neq0$
+\end_inset
+
+ sao cho
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+W_{\lambda_{0}}^{*}\left(y_{0}^{*}\right)+\left(E^{*}\Delta^{*}D^{*}\right)\left(y_{0}^{*}\right)=0.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Vì 
+\begin_inset Formula $W_{\lambda_{0}}^{*-1}$
+\end_inset
+
+ là đơn trị, ta có
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align}
+y_{0}^{*}=-\left(W_{\lambda_{0}}^{*-1}E^{*}\Delta^{*}\right)\left(D^{*}\left(y_{0}^{*}\right)\right)\label{eq:3.4}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+và do đó, 
+\begin_inset Formula $D^{*}\left(y_{0}^{*}\right)\neq0$
+\end_inset
+
+.
+ Bằng cách thêm 
+\begin_inset Formula $D^{*}$
+\end_inset
+
+ vào hai vế, ta thu được:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+D^{*}\left(y_{0}^{*}\right)=-\left(D^{*}W_{\lambda_{0}}^{*-1}E^{*}\right)\left(\Delta^{*}\left(D^{*}\left(y_{0}^{*}\right)\right)\right).
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Do đó, theo (2.4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+0 & <\norm{D^{*}\left(y_{0}^{*}\right)}\leq\norm{D^{*}W_{\lambda_{0}}^{*-1}E^{*}}\norm{\Delta^{*}\left(D^{*}\left(y_{0}^{*}\right)\right)}\\
+ & \leq\norm{D^{*}W_{\lambda_{0}}^{*-1}E^{*}}\norm{\Delta^{*}}\norm{D^{*}\left(y_{0}^{*}\right)}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Do 
+\begin_inset Formula $\im W_{\lambda_{0}}^{-1}\subset\dom E=\C^{n+m}$
+\end_inset
+
+, theo (2.10), 
+\begin_inset Formula $\left(EW_{\lambda_{0}}^{-1}\right)^{*}=W_{\lambda_{0}}^{-1*}E^{*}=W_{\lambda_{0}}^{*-1}E^{*}.$
+\end_inset
+
+ Ngoài ra, do 
+\begin_inset Formula $W_{\lambda_{0}}$
+\end_inset
+
+ là toàn ánh, 
+\begin_inset Formula $\im D\subset\dom\left(EW_{\lambda_{0}}^{-1}\right)=\C^{n}$
+\end_inset
+
+.
+ Áp dụng (2.10) một lần nữa, ta được:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(EW_{\lambda_{0}}^{-1}D\right)^{*}=D^{*}\left(EW_{\lambda_{0}}^{-1}\right)^{*}=D^{*}W_{\lambda_{0}}^{*-1}E^{*}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vì vậy, theo (2.8), ta có:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\norm{\Delta^{*}}=\norm{\Delta}\geq\frac{1}{\norm{D^{*}W_{\lambda_{0}}^{*-1}E^{*}}}=\frac{1}{\norm{EW_{\lambda_{0}}^{-1}D}}\geq\frac{1}{\sup_{\lambda\in\C}\norm{EW_{\lambda}^{-1}D}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Do bất đẳng thức trên đúng với ma trận nhiễu bất kì 
+\begin_inset Formula $\Delta\in\C^{l\times q}$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $D\Delta E$
+\end_inset
+
+ hủy khả năng điều khiển, ta có định nghĩa,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r_{\C}^{D,E}\left(A,B\right)\geq\frac{1}{\sup_{\lambda\in C}\norm{EW_{\lambda}^{-1}D}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Để chứng minh bất đẳng thức ngược, với 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ nhỏ bất kì sao cho 
+\begin_inset Formula $\sup_{\lambda\in\C}\norm{EW_{\lambda}^{-1}D}-2\epsilon>0$
+\end_inset
+
+, tồn tại 
+\begin_inset Formula $\lambda_{\epsilon}\in\C$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $\norm{D^{*}W_{\lambda_{\epsilon}}^{*-1}E^{*}}=\norm{EW_{\epsilon}^{-1}D}\geq\sup_{\lambda\in\C}\norm{EW_{\lambda}^{-1}D}-\epsilon$
+\end_inset
+
+.
+ Do 
+\begin_inset Formula $D^{*}W_{\lambda_{\epsilon}}^{*-1}E^{*}$
+\end_inset
+
+ là đơn trị, chuẩn của nó là chuẩn toán tử, do đó tồn tại 
+\begin_inset Formula $v_{\epsilon}^{*}\in\left(\C^{q}\right)^{*}:\norm{v_{\epsilon}^{*}}=1,v_{\epsilon}^{*}\in\dom\left(D^{*}W_{\lambda_{\epsilon}}^{*-1}E^{*}\right)$
+\end_inset
+
+ sao cho:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0<\sup_{\lambda\in\C}\norm{EW_{\lambda}^{-1}D}-2\epsilon\leq\norm{EW_{\lambda_{\epsilon}}^{-1}D}-\epsilon\leq\norm{\left(D^{*}W_{\lambda_{\epsilon}}^{*-1}E^{*}\right)\left(v_{\epsilon}^{*}\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Đặt 
+\begin_inset Formula $u_{\epsilon}^{*}=-W_{\lambda_{\epsilon}}^{*-1}\left(E^{*}\left(v_{\epsilon}^{*}\right)\right)\neq0,$
+\end_inset
+
+ta có 
+\begin_inset Formula $W_{\lambda_{\epsilon}}^{*}\left(u_{\epsilon}^{*}\right)=-E^{*}\left(v_{\epsilon}^{*}\right)$
+\end_inset
+
+ và 
+\begin_inset Formula $D^{*}\left(u_{\epsilon}^{*}\right)=-\left(D^{*}W_{\lambda_{\epsilon}}^{*-1}E^{*}\right)\left(v_{\epsilon}^{*}\right)\neq0$
+\end_inset
+
+.
+ Theo định lý Hahn-Banach, tồn tại 
+\begin_inset Formula $h\in\C^{l}$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $\norm h=1,\left(D^{*}\left(u_{\epsilon}^{*}\right)\right)h=\norm{D^{*}\left(u_{\epsilon}^{*}\right)}.$
+\end_inset
+
+ Do đó ta có thể định nghĩa 
+\begin_inset Formula $\Delta_{\epsilon}\in\C^{l\times q}$
+\end_inset
+
+ bằng cách đặt
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta_{\epsilon}=\frac{1}{\norm{D^{*}\left(u_{\epsilon}^{*}\right)}}hv_{\epsilon}^{*}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Do đó, hiển nhiên là
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\norm{\Delta_{\epsilon}}=\norm{D^{*}\left(u_{\epsilon}^{*}\right)}^{-1}=\norm{\left(D^{*}W_{\lambda_{\epsilon}}^{*-1}E^{*}\right)\left(v_{\epsilon}^{*}\right)}^{-1}\leq\frac{1}{\sup_{\lambda\in\C}\norm{EW_{\lambda}^{-1}D}-2\epsilon}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Áp dụng (2.11), ta có 
+\begin_inset Formula $\left(\Delta_{\epsilon}^{*}D^{*}\right)\left(u_{\epsilon}^{*}\right)=\Delta_{\epsilon}^{*}\left(D^{*}\left(u_{\epsilon}^{*}\right)\right)=D^{*}\left(u_{\epsilon}^{*}\right)\Delta_{\epsilon}=v_{\epsilon}^{*}$
+\end_inset
+
+.
+ Do đó, 
+\begin_inset Formula $\left(E^{*}\Delta_{\epsilon}^{*}D^{*}\right)\left(u_{\epsilon}^{*}\right)=E^{*}\left(v_{\epsilon}^{*}\right)$
+\end_inset
+
+ và 
+\begin_inset Formula $W_{\lambda_{\epsilon}}^{*}\left(u_{\epsilon}^{*}\right)+\left(E^{*}\Delta_{\epsilon}^{*}D^{*}\right)\left(u_{\epsilon}^{*}\right)=0,$
+\end_inset
+
+(với 
+\begin_inset Formula $u_{\epsilon}^{*}\neq0$
+\end_inset
+
+) hoặc tương đương với 
+\begin_inset Formula $W_{\lambda_{0}}+D\Delta_{\epsilon}E$
+\end_inset
+
+ không toàn ánh.
+ Suy ra cặp nhiễu 
+\begin_inset Formula $\left(\widetilde{A},\widetilde{B}\right)$
+\end_inset
+
+ với 
+\begin_inset Formula $\left[\widetilde{A},\widetilde{B}\right]=\left[A,B\right]+D\Delta_{\epsilon}E$
+\end_inset
+
+ là không điều khiển được.
+ 
+\end_layout
+
+\begin_layout Standard
+Do đó, theo định nghĩa,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r_{\C}^{D,E}\left(A,B\right)\leq\norm{\Delta_{\epsilon}}\leq\frac{1}{\sup_{\lambda\in\C}\norm{EW_{\lambda}^{-1}D}-2\epsilon}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bằng cách cho 
+\begin_inset Formula $\epsilon\to0$
+\end_inset
+
+, ta thu được bất đẳng thức ngược.
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ Điều phải chứng minh.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:3.3"
+
+\end_inset
+
+Giả sử 
+\begin_inset Formula $G\in\C^{n\times p}$
+\end_inset
+
+ có hạng theo hàng đầy đủ: 
+\begin_inset Formula $\rank G=n$
+\end_inset
+
+ và 
+\begin_inset Formula $\C^{n},\C^{p}$
+\end_inset
+
+ được trang bị chuẩn Euclidean.
+ Do đó, với toán tử tuyến tính 
+\begin_inset Formula $\mathcal{F}_{G}\left(z\right)=Gz$
+\end_inset
+
+, ta có:
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Formula 
+\begin{equation}
+d\left(0,\mathcal{F}_{G}^{-1}\left(y\right)\right)=\norm{G^{\dagger}y},\quad\norm{\mathcal{F}_{G}^{-1}}=\norm{G^{\dagger}},\label{eq:3.5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+trong đó 
+\begin_inset Formula $G^{\dagger}$
+\end_inset
+
+ đại diện nghịch đảo Moore-Penrose của 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Từ kết quả trên ta mở rộng nghịch đảo Moore-Penrose cho ma trận 
+\begin_inset Formula $G$
+\end_inset
+
+ bất kì.
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:3.4"
+
+\end_inset
+
+Cho toán tử tuyến tính 
+\begin_inset Formula $\F_{G}\left(z\right)=Gz$
+\end_inset
+
+ trong đó 
+\begin_inset Formula $G\in\C^{m\times p}$
+\end_inset
+
+, nghịch đảo Moore-Penrose tổng quát 
+\begin_inset Formula $\F_{G}^{\dagger}$
+\end_inset
+
+ của 
+\begin_inset Formula $\F_{G}$
+\end_inset
+
+ được định nghĩa bởi:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\begin{equation}
+\F_{G}^{\dagger}\left(y\right)=\begin{cases}
+z\quad s.t.\quad Gz=y,\norm z=d\left(0,\F_{G}^{-1}\left(y\right)\right) & y\in\im\F_{G,}\\
+\emptyset & y\notin\im\F_{G}.
+\end{cases}\label{eq:3.6}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Trong phần còn lại, ta giả sử rằng mọi không gian véc tơ được xem xét sẽ
+ trang bị chuẩn Euclidean.
+ 
+\end_layout
+
+\begin_layout Definition
+Đầu tiên, áp dụng 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:3.3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ toán tử điều khiển 
+\begin_inset Formula $W_{\lambda}z=\left[A-\lambda I,B\right]z$
+\end_inset
+
+ và lưu ý rằng 
+\begin_inset Formula $\norm{W_{\lambda}^{\dagger}}^{-1}=\sigma_{\min}\left[W_{\lambda}\right]$
+\end_inset
+
+, theo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:3.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ ta có công thức cho khoảng cách phi cấu trúc từ một cặp điều khiển được
+ 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ tới không điều khiển được tương đương kết quả Eising 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:1.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Conjecture
+Khoảng cách từ cặp điều khiển được 
+\begin_inset Formula $\left(A,B\right)\in\C^{n\times\left(n+m\right)}$
+\end_inset
+
+ tới không điều khiển được trong trường hợp tổ hợp nhiễu phi cấu trúc 
+\begin_inset Formula $\left[A,B\right]\leadsto\left[A,B\right]+\left[\Delta_{1},\Delta_{2}\right]$
+\end_inset
+
+ được tính theo công thức:
+\begin_inset Formula 
+\[
+r_{\C}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\C}\norm{W_{\lambda}^{\dagger}}},
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $W_{\lambda}^{\dagger}=W_{\lambda}^{*}\left(W_{\lambda}W_{\lambda}^{*}\right)^{-1}$
+\end_inset
+
+ đại diện nghịch đảo Moore-Penrose của 
+\begin_inset Formula $W_{\lambda}=\left[A-\lambda I,B\right].$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Giả sử cặp điều khiển được 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ chịu nhiễu có cấu trúc theo công thức:
+\begin_inset Formula 
+\begin{equation}
+\left[A,B\right]\leadsto\left[A,B\right]+D\Delta E,\quad\Delta\in\C^{l\times q},\label{eq:3.7}
+\end{equation}
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $D\in\C^{n\times l}$
+\end_inset
+
+,
+\begin_inset Formula $E\in\C^{q\times\left(n+m\right)}.$
+\end_inset
+
+ Do 
+\begin_inset Formula $W_{\lambda}W_{\lambda}^{\dagger}Du=Du,\forall u\in\C^{l},$
+\end_inset
+
+ ta có 
+\begin_inset Formula $W_{\lambda}^{\dagger}Du\in W_{\lambda}^{-1}\left(Du\right).$
+\end_inset
+
+ Vì vậy 
+\begin_inset Formula $W_{\lambda}^{-1}\left(Du\right)=W_{\lambda}^{\dagger}Du+W_{\lambda}^{-1}\left(0\right)=W_{\lambda}^{\dagger}Du+\ker W_{\lambda}$
+\end_inset
+
+ và dẫn đến:
+\begin_inset Formula 
+\begin{equation}
+\left(EW_{\lambda}^{-1}D\right)\left(u\right)=\left(EW_{\lambda}^{-1}\right)\left(Du\right)=EW_{\lambda}^{\dagger}Du+E\ker W_{\lambda}\label{eq:3.8}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Giớ ta đặt thêm một giả định bổ sung để thu được công thức đơn giản hơn
+ từ kết quả trên.
+\end_layout
+
+\begin_layout Corollary
+Giả sử 
+\begin_inset Formula $E^{*}E\ker W_{\lambda}\subset\ker W_{\lambda},\forall\lambda\in\C.$
+\end_inset
+
+ Khoảng cách cấu trúc từ cặp điều khiển đươc 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ tới trạng thái không điều khiển được cùng với tổ hợp nhiễu có cấu trúc
+ của công thức 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:3.7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ cho bởi công thức sau:
+\begin_inset Formula 
+\begin{equation}
+r_{\C}^{D,E}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\C}\norm{EW_{\lambda}^{\dagger}D}}\label{eq:3.9}
+\end{equation}
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $W_{\lambda}^{\dagger}=W_{\lambda}^{*}\left(W_{\lambda}W_{\lambda}^{*}\right)^{-1}$
+\end_inset
+
+ đại diện nghịch đảo Moore-Penrose của 
+\begin_inset Formula $W_{\lambda}=\left[A-\lambda I,B\right].$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Từ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:3.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ta thu được kết quả dưới đây.
+\end_layout
+
+\begin_layout Corollary
+Giả sử cặp điều khiển được 
+\begin_inset Formula $\left(A,B\right)\in\C^{n\times n}\times\C^{n\times m}$
+\end_inset
+
+ chịu nhiễu theo công thức 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:3.7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ trong đó 
+\begin_inset Formula $E\in\C^{q\times\left(m+n\right)}$
+\end_inset
+
+ có hạng cột đầy đủ.
+ Khi đó khoảng cách có cấu trúc từ 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ tới trạng thái không điểu khiển được:
+\begin_inset Formula 
+\begin{equation}
+r_{\C}^{D,E}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\C}\norm{\left(W_{\lambda}\left(E^{*}E\right)^{-1/2}\right)^{\dagger}D}}.\label{eq:3.10}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Giờ ta giả sử hệ ma trận chịu nhiễu phân biệt như sau:
+\begin_inset Formula 
+\begin{equation}
+A\leadsto A+D_{A}\Delta_{A}E_{A},\quad B\leadsto B+D_{B}\Delta_{B}E_{B}\label{eq:3.13}
+\end{equation}
+
+\end_inset
+
+với 
+\begin_inset Formula $\Delta_{A}\in\C^{l\times q_{1}},\Delta_{B}\in\C^{l\times q_{2}},E_{A}\in\C^{q_{1}\times n},E_{B}\in\C^{q_{2}\times n},D_{A}=D_{B}\in\C^{n\times l}.$
+\end_inset
+
+ Do đó, mô hình không chắc chắn này có thể được viết lại theo công thức
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:3.7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ với 
+\begin_inset Formula $D=D_{A}=D_{B},\Delta=\left[\Delta_{A},\Delta_{B}\right],E=\begin{bmatrix}E_{A} & 0\\
+0 & E_{B}
+\end{bmatrix}$
+\end_inset
+
+.
+ Theo Van Loan, gía trị kì dị tổng quát nhỏ nhất của cặp của các ma trận
+ 
+\begin_inset Formula $\left(P,Q\right)\in\C^{n\times k}\times\C^{m\times k}$
+\end_inset
+
+ được định nghĩa bởi:
+\begin_inset Formula 
+\[
+\sigma_{\min}\left(P,Q\right)=\inf_{x\in\C^{k}}\frac{\norm{Px}}{\norm{Qx}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Khi đó, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:3.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ có thể được áp dụng để thu được kết quả sau đây.
+\end_layout
+
+\begin_layout Corollary
+Giả sử cặp điều khiền được 
+\begin_inset Formula $\left(A,B\right)\in\C^{n\times n}\times\C^{n\times m}$
+\end_inset
+
+ chịu nhiễu theo công thức 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:3.13"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ trong đó 
+\begin_inset Formula $E_{A}\in\C^{q_{1}\times n}$
+\end_inset
+
+ có hạng cột đầy đủ và 
+\begin_inset Formula $\im B^{*}\subset\im E_{B}^{*}$
+\end_inset
+
+.
+ Khi đó:
+\begin_inset Formula 
+\begin{equation}
+r_{\C}^{D,E}\left(A,B\right)=\inf_{\lambda\in\C}\sigma_{\min}\left(\begin{bmatrix}E_{A}^{*\dagger}\left(A^{*}-\lambda I\right)\\
+E_{B}^{*\dagger}B^{*}
+\end{bmatrix},D^{*}\right),\label{eq:3.14}
+\end{equation}
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $E_{B}^{*\dagger}$
+\end_inset
+
+ nghịch đảo tổng quát Moore-Penrose của 
+\begin_inset Formula $E_{B}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Đa nhiễu
+\end_layout
+
+\begin_layout Standard
+Ta để ý rằng, những phần tử của ma trận 
+\begin_inset Formula $\left[A,B\right]+D\Delta E$
+\end_inset
+
+ phụ thuộc affine vào những phẫn tử không biết 
+\begin_inset Formula $\delta_{y}$
+\end_inset
+
+ của 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ Tuy nhiên, không phải mọi nhiễu affine của các phần tử của 
+\begin_inset Formula $A,B$
+\end_inset
+
+ có thể được biểu diên theo cách này.
+ Mô hình trúc nhiễu 
+\begin_inset Formula $\left[A,B\right]+D\Delta E$
+\end_inset
+
+ không thể mô phỏng lại tất cả, ví dụ, nhiễu affine mà ảnh hưởng chỉ tới
+ phần tử đường chéo của 
+\begin_inset Formula $A$
+\end_inset
+
+ và 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Trong phần này, chúng ta xét tới mô hình nhiễu tổng quát mà có thể biểu
+ diễn mọi loại nhiễu affine của 
+\begin_inset Formula $\left[A,B\right]$
+\end_inset
+
+.
+ Ta giả sử 
+\begin_inset Formula $\left(A,B\right)\in\C^{n\times n}\times\C^{n\times m}$
+\end_inset
+
+ chịu ảnh hưởng của đa nhiễu affine dạng
+\begin_inset Formula 
+\[
+\left[A,B\right]\leadsto\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+\sum_{i=1}^{N}D_{i}\Delta_{i}E_{i},
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $D_{i}\in\C^{n\times l_{i}}$
+\end_inset
+
+, 
+\begin_inset Formula $E_{i}\in\C^{q_{i}\times\left(n+m\right)}$
+\end_inset
+
+, 
+\begin_inset Formula $i\in\text{\ensuremath{\underline{N}}}$
+\end_inset
+
+ là những ma trận cấu trúc và 
+\begin_inset Formula $\Delta_{i}\in\C^{l_{i}\times q_{i}}$
+\end_inset
+
+ là ma trận nhiễu không biết.
+ Độ lớn của nhiễu 
+\begin_inset Formula 
+\[
+\Delta=\left(\Delta_{1},\ldots,\Delta_{N}\right)\in\Pi_{i=1}^{N}\C^{l_{i}\times q_{i}}
+\]
+
+\end_inset
+
+được đo bởi
+\begin_inset Formula 
+\[
+\norm{\Delta}=\sum_{i=1}^{N}\norm{\Delta_{i}}
+\]
+
+\end_inset
+
+trong đó chuẩn của nhiễu 
+\begin_inset Formula $\norm{\Delta_{i}}$
+\end_inset
+
+ là chuẩn của 
+\begin_inset Formula $\C^{l_{i}\times q_{i}}$
+\end_inset
+
+, tạo bởi những chuẩn véc tơ trên các không gian 
+\begin_inset Formula $\C^{l_{i}}$
+\end_inset
+
+, 
+\begin_inset Formula $\C^{q_{i}}$
+\end_inset
+
+ tương ứng, với 
+\begin_inset Formula $i\in\underline{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Cho cặp ma trận 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ chịu đa nhiễu, bán kính điều khiển có cấu trúc của 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ được định nghĩa bởi
+\begin_inset Formula 
+\[
+r_{\C}^{\MP}\left(A,B\right)=\inf\left\{ \norm{\Delta}\colon\Delta=\left(\Delta_{i}\right)_{i\in\underline{N}},\left[A,B\right]+\sum_{i=1}^{N}D_{i}\Delta_{i}E_{i}\text{ không điều khiển được}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Xét 
+\begin_inset Formula $Q\in\K^{n\times m}$
+\end_inset
+
+, 
+\begin_inset Formula $P\in\K^{l\times m}$
+\end_inset
+
+, ta ký hiệu 
+\begin_inset Formula 
+\[
+P\preceq Q\iff\norm{Px}\le\norm{Qx},\quad\forall x\in\C^{m}.
+\]
+
+\end_inset
+
+Dễ thấy nếu 
+\begin_inset Formula $P\preceq Q$
+\end_inset
+
+ thì 
+\begin_inset Formula $Q\subset\ker P$
+\end_inset
+
+ và 
+\begin_inset Formula 
+\[
+\im P^{*}=\left(\ker P\right)^{\perp}\subset\left(\ker Q\right)^{\perp}=\im Q^{*}.
+\]
+
+\end_inset
+
+Theo phần trước, với mỗi 
+\begin_inset Formula $\lambda\in\C$
+\end_inset
+
+ và mỗi 
+\begin_inset Formula $i\in\underline{N}$
+\end_inset
+
+, ta định nghĩa toán tử đa trị 
+\begin_inset Formula $E_{i}W_{\lambda}^{-1}D_{i}\colon\C^{l_{i}}\toto\C^{q_{i}}$
+\end_inset
+
+ bằng 
+\begin_inset Formula 
+\[
+\left(E_{i}W_{\lambda}^{-1}D_{i}\right)\left(u_{i}\right)=E_{i}W_{\lambda}^{-1}\left(D_{i}u_{i}\right),\quad u_{i}\in\C^{l_{i}},
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $W_{\lambda}^{-1}\colon\K^{n}\toto\K^{n+m}$
+\end_inset
+
+ là toán tử đa trị nghịch đảo của toán tử đơn trị 
+\begin_inset Formula $W_{\lambda}\colon\K^{n+m}\to\K^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $W_{\lambda}\left(z\right)=\left[A-\lambda I,B\right]z$
+\end_inset
+
+, 
+\begin_inset Formula $z\in\C^{n+m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+Giả sử 
+\begin_inset Formula $U$
+\end_inset
+
+ là không gian con của 
+\begin_inset Formula $\C^{k}$
+\end_inset
+
+ và 
+\begin_inset Formula $0\ne\hat{v}_{0}^{*}\notin U^{\perp}$
+\end_inset
+
+.
+ Khi đó, tồn tại một 
+\begin_inset Formula $0\ne v_{0}^{*}\in\hat{v}_{0}^{*}+U^{\perp}$
+\end_inset
+
+, 
+\begin_inset Formula $0\ne x_{0}\in U$
+\end_inset
+
+ sao cho
+\begin_inset Formula 
+\[
+\abs{v_{0}^{*}x_{0}}=\norm{v_{0}^{*}}\norm{x_{0}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kết quả chính của phần này là
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:4.3"
+
+\end_inset
+
+Cho ma trận 
+\begin_inset Formula $H\in\C^{k\times\left(n+m\right)}$
+\end_inset
+
+, cặp 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ chịu đa nhiễu với 
+\begin_inset Formula $E_{i}\preceq H$
+\end_inset
+
+ với mọi 
+\begin_inset Formula $i\in\underline{N}$
+\end_inset
+
+.
+ Khi đó
+\begin_inset Formula 
+\[
+\left[\max_{i\in\underline{N}}\sup_{\lambda\in C}\norm{HW_{\lambda}^{-1}D_{i}}\right]^{-1}\le r_{\C}^{\MP}\left(A,B\right)\le\left[\max_{i\in\underline{N}}\sup_{\lambda\in C}\norm{E_{i}W_{\lambda}^{-1}D_{i}}\right]^{-1},
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $W_{\lambda}=\left[A-\lambda I,B\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hiển nhiên, với mỗi 
+\begin_inset Formula $P\in\C^{n\times m}$
+\end_inset
+
+, 
+\begin_inset Formula $P\preceq\norm PI_{m}$
+\end_inset
+
+, với 
+\begin_inset Formula $I_{m}$
+\end_inset
+
+ là ma trận đơn vị cỡ 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Dùng kết quả của 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:4.3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ta có thể đưa ra cận dưới cho 
+\begin_inset Formula $r_{\C}^{\MP}\left(A,B\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+r_{\C}^{\MP}\left(A,B\right)\ge\left[\alpha\max_{i\in\underline{N}}\sup_{\lambda\in C}\norm{W_{\lambda}^{-1}D_{i}}\right]^{-1},
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $\alpha=\max_{i\in\underline{B}}\norm{E_{i}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+Nếu 
+\begin_inset Formula $E_{i}=\alpha_{i}E_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{i}\in\C$
+\end_inset
+
+, với mọi 
+\begin_inset Formula $i\in\underline{N}$
+\end_inset
+
+, thì bán kính điều khiển của 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ trong trường hợp đa nhiễu phức được cho bởi công thức
+\begin_inset Formula 
+\[
+r_{\C}^{\MP}\left(A,B\right)=\le\left[\max_{i\in\underline{N}}\sup_{\lambda\in C}\norm{E_{i}W_{\lambda}^{-1}D_{i}}\right]^{-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Ví dụ
+\end_layout
+
+\begin_layout Section
+Ma trận 
+\begin_inset Formula $E$
+\end_inset
+
+ không có đủ rank cột
+\end_layout
+
+\begin_layout Example
+Xét hệ điều khiển 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ xác định bởi
+\begin_inset Formula 
+\[
+\dot{u}=Ax\left(t\right)+Bu\left(t\right),
+\]
+
+\end_inset
+
+trong đó
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right],\quad B=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right].
+\]
+
+\end_inset
+
+Theo điều kiện Kalman, hệ điều khiển được.
+ Hệ chịu nhiễu có cấu trúc theo dạng
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+0 & 1 & 1\\
+1 & 0 & 0
+\end{array}\right]\leadsto\left[\begin{array}{ccc}
+\delta_{1} & \delta_{1}+1 & \delta_{2}+1\\
+\delta_{1}+1 & \delta_{1} & \delta_{2}
+\end{array}\right],
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $\delta_{i}\in\C$
+\end_inset
+
+, 
+\begin_inset Formula $i=\overline{1,2}$
+\end_inset
+
+ là những tham số nhiễu.
+ Nhiễu trên có thể biểu diễn dưới dạng
+\begin_inset Formula 
+\[
+\left[A,B\right]\leadsto\left[A,B\right]+D\Delta E
+\]
+
+\end_inset
+
+với
+\begin_inset Formula 
+\[
+D=\left[\begin{array}{c}
+1\\
+1
+\end{array}\right],\quad E=\left[\begin{array}{ccc}
+1 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right].
+\]
+
+\end_inset
+
+Dễ thấy ma trận 
+\begin_inset Formula $E$
+\end_inset
+
+ không có rank cột đầy đủ.
+ Do đó không thể dùng công thức 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:3.10"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ để tính bán kính điều khiển.
+ Với 
+\begin_inset Formula $v\in\C$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{align*}
+\left(E\left[A-\lambda I,B\right]^{-1}D\right)\left(v\right) & =E\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+v\\
+v
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+ Theo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:3.4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{align*}
+\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+v\\
+v
+\end{array}\right] & =\left\{ \left[\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\right]\colon\left[A-\lambda I,B\right]\left[\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\right]=\left[\begin{array}{c}
+v\\
+v
+\end{array}\right],\,\forall p,q,r\in\C\right\} \\
+ & =\left\{ \left[\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\right]\colon\left[\begin{array}{ccc}
+-\lambda & 1 & 1\\
+1 & -\lambda & 0
+\end{array}\right]\left[\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\right]=\left[\begin{array}{c}
+v\\
+v
+\end{array}\right],\,\forall p,q,r\in\C\right\} \\
+ & =\left\{ \left[\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\right]\colon\left[\begin{array}{c}
+q+r-\lambda p\\
+q-p\lambda
+\end{array}\right]=\left[\begin{array}{c}
+v\\
+v
+\end{array}\right],\,\forall p,q,r\in\C\right\} .
+\end{align*}
+
+\end_inset
+
+Suy ra
+\begin_inset Formula 
+\begin{align*}
+\left(E\left[A-\lambda I,B\right]^{-1}D\right)\left(v\right) & =\left\{ E\left[\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\right]\colon\left[\begin{array}{c}
+q+r-\lambda p\\
+q-p\lambda
+\end{array}\right]=\left[\begin{array}{c}
+v\\
+v
+\end{array}\right],\,\forall p,q,r\in\C\right\} \\
+ & =\left\{ \left[\begin{array}{c}
+p+q\\
+r
+\end{array}\right]\colon\left[\begin{array}{c}
+q+r-\lambda p\\
+q-p\lambda
+\end{array}\right]=\left[\begin{array}{c}
+v\\
+v
+\end{array}\right],\,\forall p,q,r\in\C\right\} \\
+ & =\left\{ \left[\begin{array}{c}
+q+v+q\lambda\\
+v-q+\lambda\left(v+q\lambda\right)
+\end{array}\right]:q\in\C\right\} .
+\end{align*}
+
+\end_inset
+
+tương đương với phương trình đường thẳng
+\begin_inset Formula 
+\begin{align*}
+a\left(q+v+q\lambda\right)+\left(v-q+\lambda\left(v+q\lambda\right)\right) & =b,\\
+ax_{1}+x_{2} & =b,
+\end{align*}
+
+\end_inset
+
+với 
+\begin_inset Formula $q\in\C$
+\end_inset
+
+.
+ Thay 
+\begin_inset Formula $q=0,1$
+\end_inset
+
+, tìm hệ số 
+\begin_inset Formula $a,b$
+\end_inset
+
+, ta có
+\begin_inset Formula 
+\begin{align*}
+\left(1-\lambda\right)x_{1}+x_{2} & =2v,\\
+x_{1} & =q+v+q\lambda,\\
+x_{2} & =v-q+\lambda\left(v+q\lambda\right).
+\end{align*}
+
+\end_inset
+
+Bài toán trở thành bài toán tìm khoảng cách từ gốc toạ độ tới đường thẳng
+ trên.
+ Nếu 
+\begin_inset Formula $\lambda=-1$
+\end_inset
+
+, đường thẳng này bị suy biến thành điểm 
+\begin_inset Formula $\left(v,0\right)$
+\end_inset
+
+ và
+\begin_inset Formula 
+\[
+d\left(0,\left(E\left[A-\lambda I,B\right]^{-1}D\right)\left(v\right)\right)=\left|v\right|.
+\]
+
+\end_inset
+
+Nếu 
+\begin_inset Formula $\lambda\ne-1$
+\end_inset
+
+, giả sử 
+\begin_inset Formula $\C$
+\end_inset
+
+ được trang bị chuẩn 
+\begin_inset Formula $\norm{\cdot}_{\infty}$
+\end_inset
+
+.
+ Xét
+\begin_inset Formula 
+\begin{align*}
+2\abs v & =\abs{\left(1-\lambda\right)x_{1}+x_{2}}\\
+ & \le\abs{\left(1-\lambda\right)x_{1}}+\abs{x_{2}}\\
+ & \le\left(\left|1-\lambda\right|+1\right)\max\left\{ \left|x_{1}\right|,\left|x_{2}\right|\right\} \\
+ & =\left(\left|1-\lambda\right|+1\right)\norm{\left[\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right]}_{\infty}\\
+\implies\frac{2\left|v\right|}{\left|\lambda-1\right|+1} & \le\norm{\left[\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right]}_{\infty}.
+\end{align*}
+
+\end_inset
+
+Dấu bằng xảy ra khi 
+\begin_inset Formula $x_{2}=\frac{2v}{1+\left|\lambda-1\right|}$
+\end_inset
+
+ và 
+\begin_inset Formula $x_{1}=e^{i\varphi}x_{2}$
+\end_inset
+
+, với 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ thoả mãn 
+\begin_inset Formula $-\left(\lambda-1\right)e^{i\varphi}=\left|\lambda-1\right|$
+\end_inset
+
+.
+ Theo 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:2.3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{align*}
+\norm{E\left[A-\lambda I,B\right]^{-1}D} & =\sup_{\left|v\right|=1}d\left(0,E\left[A-\lambda I,B\right]^{-1}D\left(v\right)\right)\\
+ & =\begin{cases}
+\sup_{\left|v\right|=1}\left\{ \inf\norm{\left[\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right]}_{\infty}\right\}  & \lambda\ne-1,\\
+\sup_{\left|v\right|=1}\left\{ \inf\left|v\right|\right\}  & \lambda=-1,
+\end{cases}\\
+ & =\begin{cases}
+\sup_{\left|v\right|=1}\left\{ \frac{2\left|v\right|}{\left|\lambda-1\right|+1}\right\}  & \lambda\ne-1,\\
+\sup_{\left|v\right|=1}\left\{ \left|v\right|\right\}  & \lambda=-1,
+\end{cases}\\
+ & =\begin{cases}
+\frac{2}{\left|\lambda-1\right|+1}, & \lambda\ne-1,\\
+1 & \lambda=-1.
+\end{cases}
+\end{align*}
+
+\end_inset
+
+Suy ra
+\begin_inset Formula 
+\[
+\sup_{\lambda\in\C}\norm{E\left[A-\lambda I,B\right]^{-1}D}=2.
+\]
+
+\end_inset
+
+Theo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:3.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ta có 
+\begin_inset Formula $r_{\C}^{D,E}\left(A,B\right)=\nicefrac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Trường hợp đa nhiễu
+\end_layout
+
+\begin_layout Example
+Xét hệ điều khiển 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+ xác định bởi
+\begin_inset Formula 
+\[
+\dot{u}=Ax\left(t\right)+Bu\left(t\right),
+\]
+
+\end_inset
+
+trong đó
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{cc}
+0 & 1\\
+-2 & 0
+\end{array}\right],\quad B=\left[\begin{array}{c}
+0\\
+1
+\end{array}\right].
+\]
+
+\end_inset
+
+Theo điều kiện Kalman, hệ điều khiển được.
+ Hệ chịu nhiễu có cấu trúc theo dạng
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+0 & 1 & 0\\
+-2 & 0 & 1
+\end{array}\right]\leadsto\left[\begin{array}{ccc}
+\delta_{1} & 1+\delta_{2} & 0\\
+-2+\delta_{3} & 0 & 1+\delta_{4}
+\end{array}\right],
+\]
+
+\end_inset
+
+trong đó 
+\begin_inset Formula $\delta_{i}\in\C$
+\end_inset
+
+, 
+\begin_inset Formula $i\in\overline{1,4}$
+\end_inset
+
+ là những tham số nhiễu.
+ Hệ chịu nhiễu có thể được mô hình hoá dưới dạng
+\begin_inset Formula 
+\[
+\left[A,B\right]\leadsto\left[A,B\right]+D_{1}\Delta_{1}E_{1}+D_{2}\Delta_{2}E_{2},
+\]
+
+\end_inset
+
+trong đó
+\begin_inset Formula 
+\begin{align*}
+D_{1} & =\left[\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right], & D_{2} & =\left[\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right],\\
+E_{1} & =\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{array}\right], & E_{2} & =\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{array}\right].
+\end{align*}
+
+\end_inset
+
+Giả sử rằng 
+\begin_inset Formula $\C^{2}$
+\end_inset
+
+ và 
+\begin_inset Formula $\C^{3}$
+\end_inset
+
+ trang bị chuẩn 
+\begin_inset Formula $\norm{\cdot}_{\infty}$
+\end_inset
+
+.
+ Xét
+\begin_inset Formula 
+\[
+H=\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right],
+\]
+
+\end_inset
+
+ta có 
+\begin_inset Formula $E_{1}\preceq H$
+\end_inset
+
+ và 
+\begin_inset Formula $E_{2}\preceq H$
+\end_inset
+
+.
+ Tính toán, ta có với mỗi 
+\begin_inset Formula $\left[\begin{array}{cc}
+x & y\end{array}\right]^{\top}\in\C^{2},$
+\end_inset
+
+ ta có
+\begin_inset Formula 
+\begin{align*}
+E_{1}\left[A-\lambda I,B\right]^{-1}D_{1}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =E_{1}\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+x\\
+0
+\end{array}\right]\\
+ & =\left\{ \left[\begin{array}{c}
+p\\
+x+\lambda p\\
+0
+\end{array}\right]:p\in\C\right\} ,\\
+E_{2}\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =E_{2}\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+0\\
+y
+\end{array}\right]\\
+ & =\left\{ \left[\begin{array}{c}
+p\\
+0\\
+y+\left(\lambda^{2}+2\right)p
+\end{array}\right]:p\in\C\right\} ,\\
+H\left[A-\lambda I,B\right]^{-1}D_{1}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+x\\
+0
+\end{array}\right]\\
+ & =\left\{ \left[\begin{array}{c}
+p\\
+x+\lambda p\\
+\lambda x+\left(\lambda^{2}+2\right)p
+\end{array}\right]:p\in\C\right\} ,\\
+H\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+0\\
+y
+\end{array}\right]\\
+ & =\left\{ \left[\begin{array}{c}
+p\\
+\lambda p\\
+y+\left(\lambda^{2}+2\right)p
+\end{array}\right]:p\in\C\right\} .
+\end{align*}
+
+\end_inset
+
+Theo cách tính toán ở ví dụ trên, ta có:
+\begin_inset Formula 
+\begin{align*}
+\norm{E_{1}\left[A-\lambda I\right]^{-1}D_{1}} & =\frac{1}{1+\left|\lambda\right|},\\
+\norm{E_{2}\left[A-\lambda I\right]^{-1}D_{2}} & =\frac{1}{1+\left|\lambda^{2}+2\right|}.
+\end{align*}
+
+\end_inset
+
+Chọn 
+\begin_inset Formula $p=0$
+\end_inset
+
+ và 
+\begin_inset Formula $p=-\nicefrac{x}{\lambda}$
+\end_inset
+
+, với mọi 
+\begin_inset Formula $\lambda\in\C$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{align*}
+d\left(0,H\left[A-\lambda I,B\right]^{-1}D_{1}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right]\right) & \le\min\left\{ \max\left\{ \left|x\right|,\left|\lambda x\right|\right\} ,\left|\frac{2x}{\lambda}\right|\right\} \le\sqrt{2}\left|x\right|.
+\end{align*}
+
+\end_inset
+
+Do đó
+\begin_inset Formula 
+\[
+\norm{H\left[A-\lambda I,B\right]^{-1}D_{1}}\le\sqrt{2}\quad\forall\lambda\in\C.
+\]
+
+\end_inset
+
+Vì dấu bằng xảy ra với 
+\begin_inset Formula $\lambda=\sqrt{2}i$
+\end_inset
+
+, ta có
+\begin_inset Formula 
+\[
+\sup_{\lambda\in\C}\norm{H\left[A-\lambda I,B\right]^{-1}D_{1}}=\sqrt{2}.
+\]
+
+\end_inset
+
+Tương tự, với 
+\begin_inset Formula $p=0$
+\end_inset
+
+, ta có
+\begin_inset Formula 
+\begin{align*}
+d\left(0,H\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right]\right) & \le\left|y\right|,\\
+\norm{H\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+x\\
+y
+\end{array}\right]} & \le1\quad\forall\lambda\in\C.
+\end{align*}
+
+\end_inset
+
+Vì dấu bằng xảy ra khi 
+\begin_inset Formula $\lambda=\sqrt{2}i$
+\end_inset
+
+, ta có
+\begin_inset Formula 
+\[
+\sup_{\lambda\in\C}\norm{H\left[A-\lambda I,B\right]^{-1}D_{2}}=1.
+\]
+
+\end_inset
+
+Theo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:4.3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ta có ước lượng của bán kính điều khiển
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{2}}=\frac{1}{\max\left\{ 1,\sqrt{2}\right\} }\le r_{\C}^{\MP}\left(A,B\right)\le\frac{1}{\max\left\{ \sup\frac{1}{1+\left|\lambda\right|},\sup\frac{1}{1+\left|\lambda^{2}+2\right|}\right\} }=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Kết luận
+\end_layout
+
+\begin_layout Standard
+Bài nghiên cứu đưa ra một phương pháp tiếp cận mới để tính khoảng cách điều
+ khiển cho hệ tuyến tính điều khiển được dựa trên toán tử tuyến tính đa
+ trị.
+ Phương pháp này cho phép mở rộng những kết quả trước cho một số dạng tổng
+ quát của hệ thống điều khiển.
+ Phương pháp này có thể được áp dụng cùng với các loại chuẩn véc tơ tuỳ
+ ý.
+ Ngoài ra, phương pháp cũng có thể được áp dụng để nghiên cứu bán kính điều
+ khiển của nhiều lớp hệ thống điều khiển.
+ Cụ thể hơn, trong tương lai, phương pháp này có thể được mở rộng để nghiên
+ cứu bán kính điều khiển của những hệ điều khiển tuyến tính ẩn hoặc hệ điều
+ khiển torng không gian vô hạn chiều, cũng như những hệ thống điều khiển
+ được biểu diễn bởi quá trình lồi.
+\end_layout
+
+\end_body
+\end_document
